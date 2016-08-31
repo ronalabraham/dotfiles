@@ -8,5 +8,6 @@
 	br = branch
 	ci = commit
 	st = status
+        ci-q = commit -a --amend --no-edit
 [credential]
 	helper = cache --timeout=3600
