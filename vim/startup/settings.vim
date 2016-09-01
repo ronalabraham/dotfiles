@@ -1,4 +1,9 @@
+" vim settings
+
 syntax on
+
+" miscellaneous
+set nocompatible
 
 " tabs and indents
 set autoindent    "copy indent from current line when starting new line
@@ -16,3 +21,7 @@ set hidden        "allow hiding of buffers without saving changes
 
 " editing text
 set backspace=indent,eol,start
+
+"displaying text
+set nowrap
+set number
