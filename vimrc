@@ -4,6 +4,7 @@
 "     https://github.com/mlongob/dotfiles/blob/master/vimrc
 "
 
+source ~/.vim/startup/colors.vim
 source ~/.vim/startup/functions.vim
 source ~/.vim/startup/mappings.vim
 source ~/.vim/startup/settings.vim
