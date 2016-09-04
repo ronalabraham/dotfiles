@@ -21,6 +21,10 @@ set hidden                                      "allow hiding of buffers without
 
 "editing text
 set backspace=indent,eol,start
+if has("persistent_undo")                       "persist undo/redo history on disk
+    set undofile
+    set undodir=~/.vim/undo
+endif
 
 "searching text
 set hlsearch                                    "highlight all search matches
