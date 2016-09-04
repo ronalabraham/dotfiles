@@ -22,6 +22,11 @@ set hidden                                      "allow hiding of buffers without
 "editing text
 set backspace=indent,eol,start
 
+"searching text
+set hlsearch                                    "highlight all search matches
+set incsearch                                   "enable incremental search
+set smartcase                                   "override ignorecase option if uppercase
+
 "displaying text
 set nowrap
 set number
@@ -32,4 +37,6 @@ if has('gui_running')
     set list                                    "show unprintable characters
     set listchars=trail:_                       "show trailing whitespace with a '_'
     let &colorcolumn=join(range(80,999),",")    "highlight column 80 onwards
+    set guifont=Ubuntu\ Mono\ 10                "todo: use fontdetect vim plugin
+    "let &guifont = "Ubuntu Mono 10"
 endif
