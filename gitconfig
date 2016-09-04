@@ -6,9 +6,9 @@
 [alias]
 	br = branch
 	ci = commit
-    ci-q = commit -a --amend --no-edit
+	ci-q = commit -a --amend --no-edit
 	co = checkout
-    rb = rebase
+	rb = rebase
 	st = status
 [credential]
 	helper = cache --timeout=3600
