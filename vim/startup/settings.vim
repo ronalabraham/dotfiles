@@ -41,6 +41,8 @@ if has('gui_running')
     set list                                    "show unprintable characters
     set listchars=trail:_                       "show trailing whitespace with a '_'
     let &colorcolumn=join(range(80,999),",")    "highlight column 80 onwards
-    set guifont=Ubuntu\ Mono\ 10                "todo: use fontdetect vim plugin
-    "let &guifont = "Ubuntu Mono 10"
+    let &guifont = fontdetect#firstFontFamily([
+                 \ "Ubuntu Mono",
+                 \ "Deja Vu Sans Mono",
+                 \ "Monospace"]) . " 10"        "select font and size
 endif

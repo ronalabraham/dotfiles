@@ -10,14 +10,17 @@ call vundle#begin()
 "alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
-" let Vundle manage Vundle, required
+"let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
-" vim-airline for pretty status/tab lines
+"vim-airline for pretty status/tab lines
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 let g:airline#extensions#tabline#enabled = 1        "enable buffer list
 let g:airline#extensions#tabline#fnamemod = ':t'    "show just the filename
+
+"vim-fontdetect helps detect which fonts are available in vim
+Plugin 'drmikehenry/vim-fontdetect'
 
 "all of your Plugins must be added before the following line
 call vundle#end()            " required
