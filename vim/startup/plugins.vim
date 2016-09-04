@@ -13,6 +13,12 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" vim-airline for pretty status/tab lines
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+let g:airline#extensions#tabline#enabled = 1        "enable buffer list
+let g:airline#extensions#tabline#fnamemod = ':t'    "show just the filename
+
 "all of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
