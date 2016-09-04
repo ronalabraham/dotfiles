@@ -12,3 +12,5 @@
 	st = status
 [credential]
 	helper = cache --timeout=3600
+[difftool]
+	prompt = false
