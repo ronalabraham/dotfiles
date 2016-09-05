@@ -50,7 +50,7 @@ function! TabSet(numSpaces)
     echo "Tabsize set to" a:numSpaces "spaces"
 endfunc
 
-"toggles tab size between 2 and 4
+"toggle tab size between 2 and 4
 function! TabToggle()
     if(&tabstop == 4)
         call TabSet(2)
@@ -59,7 +59,7 @@ function! TabToggle()
     endif
 endfunc
 
-"toggles display of unprintable characters
+"toggle display of unprintable characters
 function! UnprintableToggle()
     if(&list == 0)
         let &list=1
