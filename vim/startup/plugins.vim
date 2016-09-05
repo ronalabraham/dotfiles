@@ -22,6 +22,9 @@ let g:airline#extensions#tabline#fnamemod = ':t'    "show just the filename
 "vim-fontdetect helps detect which fonts are available in vim
 Plugin 'drmikehenry/vim-fontdetect'
 
+"vim-scala for scala syntax highlighting and more
+Plugin 'derekwyatt/vim-scala'
+
 "all of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
