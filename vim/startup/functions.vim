@@ -76,6 +76,16 @@ function! ColorColumnToggle()
     endif
 endfunc
 
-function! TrimTrailingWhiteSpace()
+"toggle auto-wrapping while editting
+function! EditAutoWrapToggle()
+    if &formatoptions =~ 't'
+        set formatoptions-=t
+    else
+        set formatoptions+=t
+    endif
+endfunction
+
+"trim trailing whitespace (interactively)
+function! TrimTrailingWhitespaces()
     %s/\s\+$//gce
 endfunction

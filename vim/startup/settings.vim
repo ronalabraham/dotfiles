@@ -41,6 +41,7 @@ if has("persistent_undo")                       "persist undo/redo history on di
     set undofile
     set undodir=~/.vim/undo
 endif
+set formatoptions-=t                            "do not autowrap text while typing
 
 "searching text
 set hlsearch                                    "highlight all search matches
@@ -48,13 +49,13 @@ set incsearch                                   "enable incremental search
 set smartcase                                   "override ignorecase option if uppercase
 
 "displaying text
-set nowrap
-set number
+set nowrap                                      "do not wrap lines in the display
+set number                                      "show line numbers
 
 "miscellaneous display settings
-set showcmd
-set showmode
-set ruler
+set showcmd                                     "show partial command in last line of screen
+set showmode                                    "put a message on the last line in certain modes
+set ruler                                       "show comma-separated cursor line+column number
 
 "gvim-specific settings
 if has('gui_running')

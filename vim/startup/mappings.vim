@@ -71,6 +71,9 @@ nnoremap <leader>s :source $MYVIMRC<cr>
 "\v opens $MYVIMRC for editing
 nnoremap <leader>v :e $MYVIMRC<cr>
 
+"\+Tab toggles tab size
+nnoremap <leader><tab> :call TabToggle()<CR>
+
 "\+cc toggles the colorcolumn
 nnoremap <leader>cc :call ColorColumnToggle()<CR>
 
@@ -78,10 +81,10 @@ nnoremap <leader>cc :call ColorColumnToggle()<CR>
 nnoremap <leader>ws :call UnprintableToggle()<CR>
 
 "\+ts removes trailing whitespaces
-nnoremap <leader>ts :call TrimTrailingWhiteSpace()<CR>
+nnoremap <leader>ts :call TrimTrailingWhitespaces()<CR>
 
-"\+Tab toggles tab size
-nnoremap <leader><tab> :call TabToggle()<CR>
+"\+aw toggles auto-wrapping while editting
+nnoremap <leader>aw :call EditAutoWrapToggle()<CR>
 
 "gvim-specific settings
 if has('gui_running')
