@@ -75,3 +75,7 @@ function! ColorColumnToggle()
         let &colorcolumn=0
     endif
 endfunc
+
+function! TrimTrailingWhiteSpace()
+    %s/\s\+$//gce
+endfunction

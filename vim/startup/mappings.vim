@@ -3,11 +3,6 @@
 "jk in insert mode put you back in normal mode
 inoremap jk <esc>
 
-"\s sources $MYVIMRC
-"\v opens $MYVIMRC for editing
-nnoremap <leader>s :source $MYVIMRC<cr>
-nnoremap <leader>v :e $MYVIMRC<cr>
-
 "Ctrl+Tab moves to next buffer
 "Ctrl+Shift+Tab moves to next buffer
 "from vim.wikia.com/wiki/Cycle_through_buffers_including_hidden_buffers
@@ -68,12 +63,22 @@ nnoremap <silent> <CR> :call InsertOrAppendMode()<CR><CR><Esc>
 noremap <C-w>_ <C-w>s
 noremap <C-w><Bar> <C-w>v
 
-"\+cc toggles the colorcolumn
-:nnoremap <leader>cc :call ColorColumnToggle()<CR>
+"Leader key mappings
+"-------------------
+"\s sources $MYVIMRC
+nnoremap <leader>s :source $MYVIMRC<cr>
 
-"\+ws toggles showing unprintable characters; see also:
-"vim.wikia.com/wiki/Managing_set_options
-:nnoremap <leader>ws :call UnprintableToggle()<CR>
+"\v opens $MYVIMRC for editing
+nnoremap <leader>v :e $MYVIMRC<cr>
+
+"\+cc toggles the colorcolumn
+nnoremap <leader>cc :call ColorColumnToggle()<CR>
+
+"\+ws toggles showing unprintable characters; see also: vim.wikia.com/wiki/Managing_set_options
+nnoremap <leader>ws :call UnprintableToggle()<CR>
+
+"\+ts removes trailing whitespaces
+nnoremap <leader>ts :call TrimTrailingWhiteSpace()<CR>
 
 "\+Tab toggles tab size
 nnoremap <leader><tab> :call TabToggle()<CR>
