@@ -9,15 +9,31 @@ set nocompatible
 set autoindent                                  "copy indent from current line when starting new line
 set cindent                                     "enable automatic C program indenting
 set expandtab                                   "tabs expanded to spaces in Insert mode
+set tabstop=4                                   "number of spaces that tab counts for
+set softtabstop=4                               "number of spaces that tab counts for while performing edits
 set shiftwidth=4                                "number of spaces for each autoindent step
 set shiftround                                  "round indent to multiple of shiftwidth
 set smartindent                                 "do smart autoindenting when starting a new line
 set smarttab                                    "tab in fromt of line insert 'shiftwidth' spaces
-set softtabstop=4                               "number of spaces that tab counts for while performing edits
-set tabstop=4                                   "number of spaces that tab counts for
+set cinwords+=case                              "start an extra indent for case statements
+set cinoptions=:1s,=1s,l1,g0.5s,h0.5s,t0,i0,(0
+"              |   |   |  |     |     |  |  +-- indent from unclosed parens
+"              |   |   |  |     |     |  +----- C++ base class decls and initializations
+"              |   |   |  |     |     +-------- indent function return type at margin
+"              |   |   |  |     +-------------- places statements after C++ scope decls
+"              |   |   |  +-------------------- place C++ scope declarations
+"              |   |   +----------------------- align with case label instead of statement
+"              |   +--------------------------- place statements after case label
+"              +------------------------------- placement of case after switch statement
 
 "buffers
 set hidden                                      "allow hiding of buffers without saving changes
+
+"command line features
+set wildchar=<Tab>
+set wildmenu
+set wildmode=longest,list,full "(see http://vim.wikia.com/wiki/Easier_buffer_switching)
+set wildignore=*/tmp/*,*.swp,*.o,*.gch,*.pyc,*.jpg,*.gif,*.png,*.a,*.so
 
 "editing text
 set backspace=indent,eol,start
@@ -34,6 +50,11 @@ set smartcase                                   "override ignorecase option if u
 "displaying text
 set nowrap
 set number
+
+"miscellaneous display settings
+set showcmd
+set showmode
+set ruler
 
 "gvim-specific settings
 if has('gui_running')
