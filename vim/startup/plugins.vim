@@ -25,6 +25,9 @@ Plugin 'drmikehenry/vim-fontdetect'
 "vim-scala for scala syntax highlighting and more
 Plugin 'derekwyatt/vim-scala'
 
+"vim-colors-solarized plugin for solarized colorscheme
+Plugin 'altercation/vim-colors-solarized'
+
 "all of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
