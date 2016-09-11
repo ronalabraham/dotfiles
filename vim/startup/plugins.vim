@@ -1,5 +1,7 @@
 "vim plugins
 
+let g:platform = GetPlatform()
+
 "START Vundle setup
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -28,6 +30,15 @@ Plugin 'derekwyatt/vim-scala'
 "vim-colors-solarized plugin for solarized colorscheme
 Plugin 'altercation/vim-colors-solarized'
 
+"linux-specific plugins
+if g:platform != "AIX"
+"YouCompleteMe: fast, as-you-type, fuzzy-search code completion engine for Vim
+    Plugin 'Valloric/YouCompleteMe'
+    let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
+    let g:ycm_autoclose_preview_window_after_insertion = 1
+    let g:ycm_autoclose_preview_window_after_completion = 1
+endif
+
 "all of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -43,3 +54,9 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 "END Vundle setup
+
+"plugins I want to try
+"Plugin 'scrooloose/syntastic'
+"Plugin 'benmills/vimux'
+"Plugin 'tpope/vim-speeddating'
+"Plugin 'Lokaltog/vim-easymotion'
