@@ -4,6 +4,7 @@ sudo apt-get install \
   build-essential \
   cmake \
   git-all \
+  kompare \
   python-dev \
   python3-dev \
   scala \
