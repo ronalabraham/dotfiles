@@ -74,6 +74,13 @@ map ,w <Plug>(easymotion-bd-w)
 map ,l <Plug>(easymotion-bd-jk)
 map ,/ <Plug>(easymotion-bd-n)
 
+"Setup for NERDTree
+"------------------
+let g:nerdtree_tabs_open_on_gui_startup = 0
+let NERDTreeIgnore = ['\.pyc$', '\.tsk$', '\.o$']
+let NERDTreeDirArrows=0
+let NERDTreeShowBookmarks=1
+
 "Leader key mappings
 "-------------------
 "\s sources $MYVIMRC
@@ -96,6 +103,9 @@ nnoremap <leader>ts :call TrimTrailingWhitespaces()<CR>
 
 "\+aw toggles auto-wrapping while editting
 nnoremap <leader>aw :call EditAutoWrapToggle()<CR>
+
+"\+nt toggles nerd tree browser
+nnoremap <leader>nt :NERDTreeToggle<CR>
 
 "gvim-specific settings
 if has('gui_running')
