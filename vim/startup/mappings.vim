@@ -63,6 +63,17 @@ nnoremap <silent> <CR> :call InsertOrAppendMode()<CR><CR><Esc>
 noremap <C-w>_ <C-w>s
 noremap <C-w><Bar> <C-w>v
 
+"Setup for vim-easymotion
+"------------------------
+", is the easymotion prefix
+",w triggers bidirectional word jumping
+",l triggers bidirectional line jumping
+",/ triggers bidirectional last-search jumping
+map , <Plug>(easymotion-prefix)
+map ,w <Plug>(easymotion-bd-w)
+map ,l <Plug>(easymotion-bd-jk)
+map ,/ <Plug>(easymotion-bd-n)
+
 "Leader key mappings
 "-------------------
 "\s sources $MYVIMRC

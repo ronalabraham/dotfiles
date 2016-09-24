@@ -30,6 +30,9 @@ Plugin 'derekwyatt/vim-scala'
 "vim-colors-solarized plugin for solarized colorscheme
 Plugin 'altercation/vim-colors-solarized'
 
+"vim-easymotion to move around quickly
+Plugin 'easymotion/vim-easymotion'
+
 "linux-specific plugins
 if g:platform != "AIX"
 "YouCompleteMe: fast, as-you-type, fuzzy-search code completion engine for Vim
