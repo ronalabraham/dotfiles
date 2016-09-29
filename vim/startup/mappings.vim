@@ -3,6 +3,11 @@
 "jk in insert mode put you back in normal mode
 inoremap jk <esc>
 
+"Ctrl+j maps to Page Up in normal mode
+"Ctrl+k maps to Page Down in normal mode
+:nnoremap <C-j> <C-u>
+:nnoremap <C-k> <C-d>
+
 "Ctrl+Tab moves to next buffer
 "Ctrl+Shift+Tab moves to next buffer
 "from vim.wikia.com/wiki/Cycle_through_buffers_including_hidden_buffers
@@ -66,11 +71,13 @@ noremap <C-w><Bar> <C-w>v
 "Setup for vim-easymotion
 "------------------------
 ", is the easymotion prefix
-",w triggers bidirectional word jumping
+",b triggers bidirectional (beginning of) word jumping
+",e triggers bidirectional (end of) word jumping
 ",l triggers bidirectional line jumping
 ",/ triggers bidirectional last-search jumping
 map , <Plug>(easymotion-prefix)
-map ,w <Plug>(easymotion-bd-w)
+map ,b <Plug>(easymotion-bd-w)
+map ,e <Plug>(easymotion-bd-e)
 map ,l <Plug>(easymotion-bd-jk)
 map ,/ <Plug>(easymotion-bd-n)
 

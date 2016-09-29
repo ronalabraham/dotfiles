@@ -91,7 +91,7 @@ function! TrimTrailingWhitespaces()
 endfunction
 
 "get OS Platform
-function GetPlatform()
+function! GetPlatform()
     if has('win32') || has('win64')
         return "Windows"
     elseif has("unix")
