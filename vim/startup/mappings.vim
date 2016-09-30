@@ -3,10 +3,10 @@
 "jk in insert mode put you back in normal mode
 inoremap jk <esc>
 
-"Ctrl+j maps to Page Up in normal mode
-"Ctrl+k maps to Page Down in normal mode
-:nnoremap <C-j> <C-u>
-:nnoremap <C-k> <C-d>
+"Ctrl+j maps to Page Down in normal mode
+"Ctrl+k maps to Page Up in normal mode
+:nnoremap <C-j> <C-d>
+:nnoremap <C-k> <C-u>
 
 "Ctrl+Tab moves to next buffer
 "Ctrl+Shift+Tab moves to next buffer
