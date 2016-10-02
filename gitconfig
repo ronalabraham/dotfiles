@@ -15,3 +15,6 @@
 	helper = cache --timeout=3600
 [difftool]
 	prompt = false
+[include]
+	path = ~/.gitconfig_local
+
