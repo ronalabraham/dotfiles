@@ -65,4 +65,3 @@ filetype plugin indent on    " required
 "Plugin 'scrooloose/syntastic'
 "Plugin 'benmills/vimux'
 "Plugin 'tpope/vim-speeddating'
-"Plugin 'Lokaltog/vim-easymotion'
