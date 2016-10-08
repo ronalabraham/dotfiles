@@ -12,17 +12,22 @@
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.inputrc: inputrc
+    ~/.tmux: tmux
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim
     ~/.vimrc: vimrc
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+    - command: ~/.tmux/plugins/tpm/scripts/install_plugins.sh
+      stdin: true
+      stdout: true
+      stderr: true
     - command: vim +PluginInstall +qall
       stdin: true
       stdout: true
       stderr: true
-    - command: ~/.vim/bundle/YouCompleteMe/install.sh --clang-completer
+    - command: ~/.vim/bundle/YouCompleteMe/install.py --clang-completer
       stdin: true
       stdout: true
       stderr: true
