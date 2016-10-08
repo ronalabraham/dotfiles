@@ -46,6 +46,7 @@ set formatoptions-=t                            "do not autowrap text while typi
 "searching text
 set hlsearch                                    "highlight all search matches
 set incsearch                                   "enable incremental search
+set ignorecase
 set smartcase                                   "override ignorecase option if uppercase
 
 "displaying text
