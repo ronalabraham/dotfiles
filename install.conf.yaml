@@ -18,6 +18,10 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+    - command: tmux source ~/.tmux.conf
+      stdin: true
+      stdout: true
+      stderr: true
     - command: ~/.tmux/plugins/tpm/scripts/install_plugins.sh
       stdin: true
       stdout: true
