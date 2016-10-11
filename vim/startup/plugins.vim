@@ -35,10 +35,14 @@ Plugin 'easymotion/vim-easymotion'
 
 "nerdtree to browse files
 Plugin 'scrooloose/nerdtree'
+let g:nerdtree_tabs_open_on_gui_startup = 0
+let NERDTreeIgnore = ['\.pyc$', '\.tsk$', '\.o$']
+let NERDTreeDirArrows=0
+let NERDTreeShowBookmarks=1
 
 "linux-specific plugins
 if g:platform != "AIX"
-"YouCompleteMe: fast, as-you-type, fuzzy-search code completion engine for Vim
+"YouCompleteMe, a fast, as-you-type code completion engine for Vim
     Plugin 'Valloric/YouCompleteMe'
     let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
     let g:ycm_autoclose_preview_window_after_insertion = 1

@@ -58,6 +58,9 @@ set showcmd                                     "show partial command in last li
 set showmode                                    "put a message on the last line in certain modes
 set ruler                                       "show comma-separated cursor line+column number
 
+"encoding
+set encoding=utf-8
+
 "gvim-specific settings
 if has('gui_running')
     set guioptions+=b                           "show horizontal scrollbar

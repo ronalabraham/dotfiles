@@ -81,13 +81,6 @@ map ,e <Plug>(easymotion-bd-e)
 map ,l <Plug>(easymotion-bd-jk)
 map ,/ <Plug>(easymotion-bd-n)
 
-"Setup for NERDTree
-"------------------
-let g:nerdtree_tabs_open_on_gui_startup = 0
-let NERDTreeIgnore = ['\.pyc$', '\.tsk$', '\.o$']
-let NERDTreeDirArrows=0
-let NERDTreeShowBookmarks=1
-
 "Leader key mappings
 "-------------------
 "\s sources $MYVIMRC
