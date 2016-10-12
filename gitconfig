@@ -9,6 +9,7 @@
 	ci = commit
 	ci-q = commit -a --amend --no-edit
 	co = checkout
+    cp = cherry-pick
 	rb = rebase
 	st = status
 [credential]
