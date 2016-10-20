@@ -1,7 +1,9 @@
 "vim mappings
 
 "jk in insert mode put you back in normal mode
+"jk in command mode opens command-line window
 inoremap jk <esc>
+cnoremap jk <C-f>
 
 "Ctrl+j maps to Page Down in normal mode
 "Ctrl+k maps to Page Up in normal mode
@@ -106,6 +108,9 @@ nnoremap <leader>aw :call EditAutoWrapToggle()<CR>
 
 "\+nt toggles nerd tree browser
 nnoremap <leader>nt :NERDTreeToggle<CR>
+
+"\+tb toggles tagbar browser
+nnoremap <leader>tb :TagbarToggle<CR>
 
 "gvim-specific settings
 if has('gui_running')

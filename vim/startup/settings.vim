@@ -69,6 +69,6 @@ if has('gui_running')
     let &colorcolumn=join(range(80,999),",")    "highlight column 80 onwards
     let &guifont = fontdetect#firstFontFamily([
                  \ "Ubuntu Mono",
-                 \ "Deja Vu Sans Mono",
+                 \ "DejaVu Sans Mono",
                  \ "Monospace"]) . " 10"        "select font and size
 endif

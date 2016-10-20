@@ -3,6 +3,7 @@
 sudo apt-get install \
   build-essential \
   cmake \
+  exuberant-ctags \
   git-all \
   kompare \
   python-dev \

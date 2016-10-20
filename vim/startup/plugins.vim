@@ -33,6 +33,12 @@ Plugin 'altercation/vim-colors-solarized'
 "vim-easymotion to move around quickly
 Plugin 'easymotion/vim-easymotion'
 
+"vim git command-line wrapper (and more)
+Plugin 'tpope/vim-fugitive'
+
+"vim tag browser
+Plugin 'majutsushi/tagbar'
+
 "nerdtree to browse files
 Plugin 'scrooloose/nerdtree'
 let g:nerdtree_tabs_open_on_gui_startup = 0
