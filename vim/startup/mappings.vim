@@ -21,8 +21,8 @@ nnoremap <A-p> :bprevious<CR>:redraw<CR>:ls<CR>
 "Ctrl+z maps to undo
 "Ctrl+y maps to redo
 "Ctrl+v pastes from system buffer
-"Ctrl+c closes the current buffer; from:
-"stackoverflow.com/questions/4465095/vim-delete-buffer-without-losing-the-split-window
+"Ctrl+x closes the current buffer; from:
+"  stackoverflow.com/questions/4465095/vim-delete-buffer-without-losing-the-split-window
 "Ctrl+s saves the current buffer
 nnoremap <C-z> u
 inoremap <C-z> <C-\><C-o>u
@@ -31,7 +31,7 @@ inoremap <C-y> <C-o><C-R>
 nnoremap <C-v> "*p
 set pastetoggle=<F10>
 inoremap <C-v> <F10><C-r>+<F10>
-nnoremap <C-c> :bp\|bd #<CR>
+nnoremap <C-x> :bp\|bd #<CR>
 noremap <C-s> :w<CR>
 inoremap <C-S> <Esc>:w<CR>
 
