@@ -39,6 +39,13 @@ Plugin 'tpope/vim-fugitive'
 "vim tag browser
 Plugin 'majutsushi/tagbar'
 
+"ultisnippets for fast editing
+Plugin 'SirVer/ultisnips'
+let g:UltiSnipsExpandTrigger="<c-j>"        " Ctrl+j triggers UltiSnips expansion
+let g:UltiSnipsJumpForwardTrigger="<c-f>"   " Ctrl+f jumps to next snippet
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"  " Ctrl+b jumps to previous snippet
+let g:UltiSnipsEditSplit="vertical"         " :UltiSnipsEdit splits window vertically
+
 "nerdtree to browse files
 Plugin 'scrooloose/nerdtree'
 let g:nerdtree_tabs_open_on_gui_startup = 0

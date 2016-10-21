@@ -114,6 +114,9 @@ nnoremap <leader>nt :NERDTreeToggle<CR>
 "\+tb toggles tagbar browser
 nnoremap <leader>tb :TagbarToggle<CR>
 
+"\+us edits UltiSnips snippets file
+nnoremap <leader>us :UltiSnipsEdit<CR>
+
 "gvim-specific settings
 if has('gui_running')
     "F12 increments font size
