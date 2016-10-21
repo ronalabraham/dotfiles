@@ -42,8 +42,10 @@ inoremap <C-BS> <C-\><C-o>db
 
 "Ctrl+w,_ splits window horizontally
 "Ctrl+w,| splits window vertically
+"Ctrl+w,x closes current window (note: use Ctrl+w,Ctrl+x to exchange)
 noremap <C-w>_ <C-w>s
 noremap <C-w><Bar> <C-w>v
+noremap <C-w>x <C-w>c
 
 "f*ck Ex mode (see www.bestofvim.com/tip/leave-ex-mode-good/)
 nnoremap Q <nop>
