@@ -29,7 +29,6 @@ inoremap <C-z> <C-\><C-o>u
 nnoremap <C-y> <C-R>
 inoremap <C-y> <C-o><C-R>
 nnoremap <C-v> "*p
-set pastetoggle=<F10>
 inoremap <C-v> <F10><C-r>+<F10>
 nnoremap <C-x> :bp\|bd #<CR>
 noremap <C-s> :w<CR>
