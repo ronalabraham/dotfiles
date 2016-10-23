@@ -18,14 +18,13 @@
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
-    - command: tmux source ~/.tmux.conf
-      stdin: true
-      stdout: true
-      stderr: true
+    - command: tmux new-session -d -s tmux_bootstrap
     - command: ~/.tmux/plugins/tpm/scripts/install_plugins.sh
+      description: Installing tmux plugins
       stdin: true
       stdout: true
       stderr: true
+    - command: tmux kill-session -t tmux_bootstrap
     - command: vim +PluginInstall +qall
       stdin: true
       stdout: true

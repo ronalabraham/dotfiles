@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# For motivation for this solution, see Vincent Hsu's answer in:
+# http://stackoverflow.com/questions/35016458/how-to-write-if-statement-in-tmux-conf-to-set-different-options-for-different-t
+
 tmux_conf=~/.tmux/conf
 tmux_version="$(tmux -V | cut -d ' ' -f 2 | sed 's/[^0-9\.]//g')"
 

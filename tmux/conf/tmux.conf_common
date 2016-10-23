@@ -64,12 +64,13 @@ set -sg escape-time 0
 # Plugins
 # -----------------------------------------------------------------------------
 set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'nhdaly/tmux-better-mouse-mode'
+set -g @plugin 'tmux-plugins/tmux-open'
 
 # plugins to try:
 # set -g @plugin 'tmux-plugins/tmux-sensible'
 # set -g @plugin 'tmux-plugins/tmux-copycat'
 # set -g @plugin 'tmux-plugins/tmux-yank'
-# set -g @plugin 'tmux-plugins/tmux-open'
 
 # other examples:
 # set -g @plugin 'github_username/plugin_name'
