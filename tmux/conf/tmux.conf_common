@@ -1,0 +1,78 @@
+# -----------------------------------------------------------------------------
+#                          TMUX Common Configuration
+#------------------------------------------------------------------------------
+
+# Bindings
+#------------------------------------------------------------------------------
+# set Ctrl-w as the default prefix key combination
+unbind-key C-b
+set -g prefix C-w
+
+# use 'prefix |' to split horizontally and 'prefix -' to split vertically
+bind-key | split-window -h
+bind-key _ split-window -v
+
+# use vi-style pane navigation
+unbind-key j
+unbind-key k
+unbind-key h
+unbind-key l
+bind-key j select-pane -D # 'prefix j' moves down
+bind-key k select-pane -U # 'prefix k' moves up
+bind-key h select-pane -L # 'prefix h' moves left
+bind-key l select-pane -R # 'prefix l' moves right
+
+# vi-style copying and pasting (note: 'prefix C-[' enters copy mode)
+bind-key -t vi-copy 'v' begin-selection    # 'v' starts selection
+bind-key -t vi-copy 'C-q' rectangle-toggle # 'Ctrl q' toggles block selection
+bind-key -t vi-copy 'C-j' halfpage-down    # 'Ctrl j' moves half page down
+bind-key -t vi-copy 'C-k' halfpage-up      # 'Ctrl k' moves half page up
+bind-key -t vi-copy 'y' copy-selection     # 'v' yanks selection
+bind-key -t vi-copy 'q' cancel             # 'q' exits copy mode
+bind-key p paste-buffer                    # 'prefix p' pastes local buffer
+
+# reload ~/.tmux.conf using prefix r
+bind r source-file ~/.tmux.conf \; display "Reloaded ~/.tmux.conf"
+
+# Colors
+# -----------------------------------------------------------------------------
+set -g default-terminal "screen-256color"
+
+# Status Bar
+# -----------------------------------------------------------------------------
+set -g status on         # turn the status bar on
+set -g status-interval 5 # set update frequency
+
+# Miscellaneous
+# -----------------------------------------------------------------------------
+# use vi mode keys
+setw -g mode-keys vi
+
+# visual notification of activity in other windows
+setw -g monitor-activity on
+set -g visual-activity on
+
+# set scrollback history to 10000 (10k)
+set -g history-limit 10000
+
+# allow local customization in ~/.tmux.conf_local
+if-shell "[ -f ~/.tmux.conf_local ]" 'source ~/.tmux.conf_local'
+
+# no escape meta key-sequence delay
+set -sg escape-time 0
+
+# Plugins
+# -----------------------------------------------------------------------------
+set -g @plugin 'tmux-plugins/tpm'
+
+# plugins to try:
+# set -g @plugin 'tmux-plugins/tmux-sensible'
+# set -g @plugin 'tmux-plugins/tmux-copycat'
+# set -g @plugin 'tmux-plugins/tmux-yank'
+# set -g @plugin 'tmux-plugins/tmux-open'
+
+# other examples:
+# set -g @plugin 'github_username/plugin_name'
+# set -g @plugin 'git@github.com/user/plugin'
+# set -g @plugin 'git@bitbucket.com/user/plugin'
+
