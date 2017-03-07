@@ -71,5 +71,5 @@ if has('gui_running')
     let &guifont = fontdetect#firstFontFamily([
                  \ "Ubuntu Mono",
                  \ "DejaVu Sans Mono",
-                 \ "Monospace"]) . " 10"        "select font and size
+                 \ "Monospace"]) . " 8"         "select font and size
 endif
