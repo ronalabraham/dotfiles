@@ -22,15 +22,6 @@ bind-key k select-pane -U # 'prefix k' moves up
 bind-key h select-pane -L # 'prefix h' moves left
 bind-key l select-pane -R # 'prefix l' moves right
 
-# vi-style copying and pasting (note: 'prefix C-[' enters copy mode)
-bind-key -t vi-copy 'v' begin-selection    # 'v' starts selection
-bind-key -t vi-copy 'C-q' rectangle-toggle # 'Ctrl q' toggles block selection
-bind-key -t vi-copy 'C-j' halfpage-down    # 'Ctrl j' moves half page down
-bind-key -t vi-copy 'C-k' halfpage-up      # 'Ctrl k' moves half page up
-bind-key -t vi-copy 'y' copy-selection     # 'v' yanks selection
-bind-key -t vi-copy 'q' cancel             # 'q' exits copy mode
-bind-key p paste-buffer                    # 'prefix p' pastes local buffer
-
 # reload ~/.tmux.conf using prefix r
 bind r source-file ~/.tmux.conf \; display "Reloaded ~/.tmux.conf"
 
