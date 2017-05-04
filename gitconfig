@@ -3,7 +3,7 @@
 	email = ronalabraham@gmail.com
 [core]
 	editor = vim
-	excludesfile = /home/ronalabraham/.gitignore_global
+	excludesfile = ~/.gitignore_global
 [alias]
 	br = branch
 	ci = commit
