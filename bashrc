@@ -2,6 +2,9 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# adding per https://stackoverflow.com/questions/12373586
+stty -ixon
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
