@@ -5,6 +5,9 @@
 # adding per https://stackoverflow.com/questions/12373586
 stty -ixon
 
+# adding per https://stackoverflow.com/questions/34253579
+export GTEST_COLOR=1
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
