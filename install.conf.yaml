@@ -8,6 +8,7 @@
 - link:
     ~/.bashrc: bashrc
     ~/.bash_aliases: bash_aliases
+    ~/.bash_profile: bash_profile
     ~/.ctags: ctags
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
