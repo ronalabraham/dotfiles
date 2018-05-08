@@ -6,10 +6,4 @@
 [[ -r ~/.profile ]] && . ~/.profile
 
 # Set command line prompt.
-NONE='\e[0m'
-RED='\e[0;31m'
-GREEN='\e[0;32m'
-PS1="\u${GREEN}@\h${NONE}[\w]${RED}\$(__git_ps1 '(%s)')${NONE} \$ "
-unset NONE
-unset RED
-unset GREEN
+PS1='\[\033[01;32m\]\u\[\033[00m\]@\[\033[00;32m\]\h\[\033[00m\]:${PWD}\[\033[00m\]\[\033[00;31m\]$(__git_ps1 \("%s"\)) \[\033[00m\]\$ '
