@@ -10,6 +10,7 @@
 	ci-q = commit -a --amend --no-edit
 	co = checkout
 	cp = cherry-pick
+	lg = log --graph --decorate --oneline
 	rb = rebase
 	st = status
 [credential]
