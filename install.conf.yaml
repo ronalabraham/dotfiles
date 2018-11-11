@@ -11,6 +11,7 @@
     ~/.bash_profile: bash_profile
     ~/.ctags: ctags
     ~/.dircolors: dircolors
+    ~/.fzf: fzf
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.inputrc: inputrc
@@ -29,6 +30,10 @@
       stderr: true
     - command: tmux kill-session -t tmux_bootstrap
     - command: vim +PluginInstall +qall
+      stdin: true
+      stdout: true
+      stderr: true
+    - command: ~/.fzf/install
       stdin: true
       stdout: true
       stderr: true
