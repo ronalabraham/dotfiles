@@ -33,7 +33,7 @@
       stdin: true
       stdout: true
       stderr: true
-    - command: ~/.fzf/install
+    - command: ~/.fzf/install --all --no-zsh
       stdin: true
       stdout: true
       stderr: true
