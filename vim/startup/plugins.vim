@@ -62,6 +62,36 @@ if g:platform != "AIX"
     let g:ycm_autoclose_preview_window_after_completion = 1
 endif
 
+"black for Python code formatting
+Plugin 'ambv/black'
+let g:black_linelength=79
+let g:black_virtualenv="~/.vim_black"
+
+"ale for linting and formatting
+Plugin 'w0rp/ale'
+let g:ale_sign_column_always = 1                                "always show the gutter
+let g:ale_sign_error = '!>'                                     "looks better
+let g:ale_sign_warning = '->'                                   "looks better
+let g:airline#extensions#ale#enabled = 1                        "I use airline, so why not?
+let g:ale_echo_msg_error_str = 'ERROR'                          "Bloomberg ball-style
+let g:ale_echo_msg_warning_str = 'WARN '                        "Bloomberg ball-style
+let g:ale_echo_msg_format = '[%linter%] %severity% %code: %%s'  "nice error message format
+
+let g:ale_linters = {}
+let g:ale_linters.python = [
+            \'pycodestyle',
+            \'flake8',
+            \'mypy',
+            \'pylint']                                          "python linters I want to run
+let g:ale_python_pylint_executable = 'pylint3.6'                "hopefully temporary
+
+let g:ale_fixers = {}
+let g:ale_fixers.python = ['isort', 'black']                    "python fixers I care about
+let g:ale_python_isort_options =
+            \"--line-width=79 --multi_line=3"                   "79 characters, vertical hanging indents
+let g:ale_python_black_options =
+            \"--line-length 79"                                 "79 characters
+
 "all of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required

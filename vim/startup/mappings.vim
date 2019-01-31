@@ -116,6 +116,9 @@ nnoremap <leader>tb :TagbarToggle<CR>
 "\+us edits UltiSnips snippets file
 nnoremap <leader>us :UltiSnipsEdit<CR>
 
+"\+f applies ALE fixes (equivalent to :ALEFix)
+nmap <leader>f <Plug>(ale_fix)
+
 "gvim-specific settings
 if has('gui_running')
     "F12 increments font size
