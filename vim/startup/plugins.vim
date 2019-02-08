@@ -76,21 +76,10 @@ let g:airline#extensions#ale#enabled = 1                        "I use airline, 
 let g:ale_echo_msg_error_str = 'ERROR'                          "Bloomberg ball-style
 let g:ale_echo_msg_warning_str = 'WARN '                        "Bloomberg ball-style
 let g:ale_echo_msg_format = '[%linter%] %severity% %code: %%s'  "nice error message format
-
-let g:ale_linters = {}
-let g:ale_linters.python = [
-            \'pycodestyle',
-            \'flake8',
-            \'mypy',
-            \'pylint']                                          "python linters I want to run
-let g:ale_python_pylint_executable = 'pylint3.6'                "hopefully temporary
-
-let g:ale_fixers = {}
-let g:ale_fixers.python = ['isort', 'black']                    "python fixers I care about
-let g:ale_python_isort_options =
-            \"--line-width=79 --multi_line=3"                   "79 characters, vertical hanging indents
-let g:ale_python_black_options =
-            \"--line-length 79"                                 "79 characters
+let g:ale_fixers = {
+            \   '*': ['remove_trailing_lines',
+            \ 'trim_whitespace']
+            \}                                                  "default fixers
 
 "all of your Plugins must be added before the following line
 call vundle#end()            " required

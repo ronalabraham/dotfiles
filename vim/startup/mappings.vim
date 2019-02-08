@@ -116,6 +116,9 @@ nnoremap <leader>tb :TagbarToggle<CR>
 "\+us edits UltiSnips snippets file
 nnoremap <leader>us :UltiSnipsEdit<CR>
 
+"\+l applies ALE linting (equivalent to :ALELint)
+nmap <leader>l <Plug>(ale_lint)
+
 "\+f applies ALE fixes (equivalent to :ALEFix)
 nmap <leader>f <Plug>(ale_fix)
 
