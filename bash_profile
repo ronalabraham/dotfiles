@@ -7,3 +7,10 @@
 
 # Set command line prompt.
 PS1='\[\033[01;32m\]\u\[\033[00m\]@\[\033[00;32m\]\h\[\033[00m\]:${PWD}\[\033[00m\]\[\033[00;31m\]($(__git_ps1 "%s")) \[\033[00m\]\$ \n '
+
+# https://askubuntu.com/questions/363346/how-to-permanently-switch-caps-lock-and-esc
+if [[ $(uname -s) == Linux ]]
+then
+    setxkbmap -option "caps:swapescape"
+fi
+
