@@ -24,9 +24,6 @@ let g:airline#extensions#tabline#fnamemod = ':t'    "show just the filename
 "vim-fontdetect helps detect which fonts are available in vim
 Plugin 'drmikehenry/vim-fontdetect'
 
-"vim-gutentags for automated tag generation
-Plugin 'ludovicchabant/vim-gutentags'
-
 "vim-scala for scala syntax highlighting and more
 Plugin 'derekwyatt/vim-scala'
 
