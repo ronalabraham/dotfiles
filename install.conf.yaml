@@ -14,6 +14,7 @@
     ~/.fzf: fzf
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
+    ~/.git-prompt.sh: git-prompt.sh
     ~/.inputrc: inputrc
     ~/.tmux: tmux
     ~/.tmux.conf: tmux.conf
