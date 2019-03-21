@@ -20,7 +20,11 @@ nnoremap <A-p> :bprevious<CR>:redraw<CR>:ls<CR>
 
 "Ctrl+z maps to undo
 "Ctrl+y maps to redo
-"Ctrl+v pastes from system buffer
+"Ctrl+c copies to system clipboard in visual mode
+"  vim.fandom.com/wiki/Accessing_the_system_clipboard
+"Ctrl+v pastes from X clipboard in normal mode, but from system clipboard in
+"insert mode; from:
+"  stackoverflow.com/questions/2861627/paste-in-insert-mode
 "Ctrl+x closes the current buffer; from:
 "  stackoverflow.com/questions/4465095/vim-delete-buffer-without-losing-the-split-window
 "Ctrl+s saves the current buffer
@@ -28,8 +32,9 @@ nnoremap <C-z> u
 inoremap <C-z> <C-\><C-o>u
 nnoremap <C-y> <C-R>
 inoremap <C-y> <C-o><C-R>
+vnoremap <C-c> "+y
 nnoremap <C-v> "*p
-inoremap <C-v> <F10><C-r>+<F10>
+inoremap <C-v> <C-r><C-o>+
 nnoremap <C-x> :bp\|bd #<CR>
 noremap <C-s> :w<CR>
 inoremap <C-S> <Esc>:w<CR>

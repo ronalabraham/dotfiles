@@ -42,7 +42,7 @@ if has("persistent_undo")                       "persist undo/redo history on di
     set undodir=~/.vim/undo
 endif
 set formatoptions-=t                            "do not autowrap text while typing
-set pastetoggle=<leader>p                       "\+p toggles paste mode
+set pastetoggle=F10                             "F1O toggles paste mode
 
 "searching text
 set hlsearch                                    "highlight all search matches
