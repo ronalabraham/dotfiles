@@ -13,6 +13,7 @@
 	lg = log --graph --decorate --oneline
 	rb = rebase
 	st = status
+    top = rev-parse --show-toplevel
 [credential]
 	helper = cache --timeout=3600
 [difftool]
