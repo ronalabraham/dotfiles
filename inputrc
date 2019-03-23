@@ -1,4 +1,4 @@
-# want vi to be the default editor for readline
+# set vi to be the default editor for readline
 set editing-mode vi
 set show-mode-in-prompt On
 
@@ -8,9 +8,10 @@ $if mode=vi
     set keymap vi-command
     "gg": beginning-of-history
     "G": end-of-history
+    Control-l: clear-screen
 
     # insert mode
     set keymap vi-insert
     "jk": vi-movement-mode # remap escape
-    "\C-l": clear-screen
+    Control-l: clear-screen
 $endif
