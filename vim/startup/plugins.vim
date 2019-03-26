@@ -58,7 +58,7 @@ let NERDTreeDirArrows=0
 let NERDTreeShowBookmarks=1
 
 "linux-specific plugins
-if (g:platform != "AIX" && g:platform != "Darwin")
+if (g:platform != "AIX")
 "YouCompleteMe, a fast, as-you-type code completion engine for Vim
     Plugin 'Valloric/YouCompleteMe'
     let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
