@@ -32,7 +32,7 @@ set hidden                                      "allow hiding of buffers without
 "command line features
 set wildchar=<Tab>
 set wildmenu
-set wildmode=longest,list,full "(see http://vim.wikia.com/wiki/Easier_buffer_switching)
+set wildmode=longest,list,full "(see vim.wikia.com/wiki/Easier_buffer_switching)
 set wildignore=*/tmp/*,*.swp,*.o,*.gch,*.pyc,*.jpg,*.gif,*.png,*.a,*.so
 
 "editing text
@@ -61,6 +61,16 @@ set ruler                                       "show comma-separated cursor lin
 
 "encoding
 set encoding=utf-8
+
+"more natural split opening
+"  thoughtbot.com/blog/vim-splits-move-faster-and-more-naturally
+set splitbelow
+set splitright
+
+"enable use of the mouse
+"  https://vi.stackexchange.com/a/521
+set mouse=a
+set ttymouse=xterm2
 
 "gvim-specific settings
 if has('gui_running')

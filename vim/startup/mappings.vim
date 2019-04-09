@@ -7,12 +7,31 @@ cnoremap jk <C-f>
 
 "Ctrl+j maps to Page Down in normal mode
 "Ctrl+k maps to Page Up in normal mode
-:nnoremap <C-j> <C-d>
-:nnoremap <C-k> <C-u>
+nnoremap <C-j> <C-d>
+nnoremap <C-k> <C-u>
+
+"Ctrl_w,h moves left one split
+"Ctrl+w,j moves down one split
+"Ctrl+w,k moves up one split
+"Ctrl+w,l moves right one split
+"Ctrl+w,\ moves to previous split
+"  github.com/christoomey/vim-tmux-navigator
+nnoremap <silent> <C-w>h :TmuxNavigateLeft<cr>
+nnoremap <silent> <C-w>j :TmuxNavigateDown<cr>
+nnoremap <silent> <C-w>k :TmuxNavigateUp<cr>
+nnoremap <silent> <C-w>l :TmuxNavigateRight<cr>
+nnoremap <silent> <C-w>\ :TmuxNavigatePrevious<cr>
+
+"Ctrl+w,_ splits window horizontally
+"Ctrl+w,| splits window vertically
+"Ctrl+w,x closes current window (note: use Ctrl+w,Ctrl+x to exchange)
+noremap <C-w>_ <C-w>s
+noremap <C-w><Bar> <C-w>v
+noremap <C-w>x <C-w>c
 
 "Ctrl+Tab moves to next buffer
 "Ctrl+Shift+Tab moves to next buffer
-"from vim.wikia.com/wiki/Cycle_through_buffers_including_hidden_buffers
+"  vim.wikia.com/wiki/Cycle_through_buffers_including_hidden_buffers
 nnoremap <C-Tab> :bnext<CR>
 nnoremap <C-S-Tab> :bprevious<CR>
 nnoremap <A-n> :bnext<CR>:redraw<CR>:ls<CR>
@@ -23,9 +42,9 @@ nnoremap <A-p> :bprevious<CR>:redraw<CR>:ls<CR>
 "Ctrl+c copies to system clipboard in visual mode
 "  vim.fandom.com/wiki/Accessing_the_system_clipboard
 "Ctrl+v pastes from X clipboard in normal mode, but from system clipboard in
-"insert mode; from:
+"insert mode
 "  stackoverflow.com/questions/2861627/paste-in-insert-mode
-"Ctrl+x closes the current buffer; from:
+"Ctrl+x closes the current buffer
 "  stackoverflow.com/questions/4465095/vim-delete-buffer-without-losing-the-split-window
 "Ctrl+s saves the current buffer
 nnoremap <C-z> u
@@ -40,16 +59,9 @@ noremap <C-s> :w<CR>
 inoremap <C-S> <Esc>:w<CR>
 
 "Ctrl+backspace deletes previous word
-"from vim.wikia.com/wiki/Map_Ctrl-Backspace_to_delete_previous_word
+"  vim.wikia.com/wiki/Map_Ctrl-Backspace_to_delete_previous_word
 inoremap <C-w> <C-\><C-o>dB
 inoremap <C-BS> <C-\><C-o>db
-
-"Ctrl+w,_ splits window horizontally
-"Ctrl+w,| splits window vertically
-"Ctrl+w,x closes current window (note: use Ctrl+w,Ctrl+x to exchange)
-noremap <C-w>_ <C-w>s
-noremap <C-w><Bar> <C-w>v
-noremap <C-w>x <C-w>c
 
 "f*ck Ex mode (see www.bestofvim.com/tip/leave-ex-mode-good/)
 nnoremap Q <nop>

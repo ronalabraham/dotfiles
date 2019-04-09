@@ -85,6 +85,11 @@ let g:ale_fixers = {
             \ 'trim_whitespace']
             \}                                                  "default fixers
 
+"vim-tmux-navigator to navigate between tmux and vim splits cleanly
+Plugin 'christoomey/vim-tmux-navigator'
+let g:tmux_navigator_no_mappings = 1          "use custom mappings (see mappings.vim)
+let g:tmux_navigator_disable_when_zoomed = 1  "navigation keys do not unzoom zoomed pane
+
 "all of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
