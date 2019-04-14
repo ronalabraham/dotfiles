@@ -29,11 +29,11 @@ noremap <C-w>_ <C-w>s
 noremap <C-w><Bar> <C-w>v
 noremap <C-w>x <C-w>c
 
-"Ctrl+Tab moves to next buffer
-"Ctrl+Shift+Tab moves to next buffer
+"Tab moves to next buffer (in normal mode)
+"Shift+Tab moves to next buffer (in normal mode)
 "  vim.wikia.com/wiki/Cycle_through_buffers_including_hidden_buffers
-nnoremap <C-Tab> :bnext<CR>
-nnoremap <C-S-Tab> :bprevious<CR>
+nnoremap <silent> <Tab> :bnext<CR>
+nnoremap <silent> <S-Tab> :bprevious<CR>
 nnoremap <A-n> :bnext<CR>:redraw<CR>:ls<CR>
 nnoremap <A-p> :bprevious<CR>:redraw<CR>:ls<CR>
 
