@@ -70,7 +70,11 @@ set splitright
 "enable use of the mouse
 "  https://vi.stackexchange.com/a/521
 set mouse=a
-set ttymouse=xterm2
+if has("mouse_sgr")
+    set ttymouse=sgr
+else
+    set ttymouse=xterm2
+end
 
 "gvim-specific settings
 if has('gui_running')
