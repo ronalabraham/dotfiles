@@ -80,12 +80,14 @@ let g:ale_echo_msg_format = '[%linter%] %severity% %code: %%s'  "nice error mess
 let g:ale_fixers = {
     \ '*': ['remove_trailing_lines',
     \       'trim_whitespace']
-    \}                                    "default fixers
-let g:ale_lint_on_text_changed = 'never'  "don't run on text change
-let g:ale_lint_on_enter = 0               "don't run on opening a file
-let g:ale_sign_column_always = 1          "always show the gutter
-let g:ale_sign_error = '!>'               "looks better
-let g:ale_sign_warning = '->'             "looks better
+    \}                                     "default fixers
+let g:ale_lint_on_text_changed = 'normal'  "run if text changed in normal mode (e.g. pasting)
+let g:ale_lint_on_enter = 1                "run when opening a file
+let g:ale_lint_on_insert_leave = 1         "run when leaving insert mode
+let g:ale_lint_on_save = 1                 "run when saving a file
+let g:ale_sign_column_always = 1           "always show the gutter
+let g:ale_sign_error = '!>'                "looks better
+let g:ale_sign_warning = '->'              "looks better
 
 "vim-tmux-navigator to navigate between tmux and vim splits cleanly
 Plugin 'christoomey/vim-tmux-navigator'
