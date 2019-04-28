@@ -17,7 +17,8 @@ You can make customizations for the following programs by editing their (untrack
 | Program     | Local config file                |
 | ----------- | -------------------------------- |
 | vim         | ~/.vimrc_local                   |
-|             | ~/.vim_local/ftplugin/python.vim |
 |             | ~/.vim_local/ftplugin/cpp.vim    |
+|             | ~/.vim_local/ftplugin/java.vim   |
+|             | ~/.vim_local/ftplugin/python.vim |
 | git         | ~/.gitconfig_local               |
 | tmux        | ~/.tmux.conf_local               |
