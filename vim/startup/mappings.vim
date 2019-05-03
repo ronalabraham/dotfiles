@@ -103,8 +103,8 @@ map ,/ <Plug>(easymotion-bd-n)
 
 "Leader key mappings
 "-------------------
-"\s sources $MYVIMRC
-nnoremap <leader>s :source $MYVIMRC<cr>
+"\s reloads (sources) $MYVIMRC
+nnoremap <leader>r :source $MYVIMRC<cr>
 
 "\v opens $MYVIMRC for editing
 nnoremap <leader>v :e $MYVIMRC<cr>
@@ -134,10 +134,16 @@ nnoremap <leader>tb :TagbarToggle<CR>
 nnoremap <leader>us :UltiSnipsEdit<CR>
 
 "\+l applies ALE linting (equivalent to :ALELint)
-nmap <leader>l <Plug>(ale_lint)
+nmap <leader>al <Plug>(ale_lint)
 
 "\+f applies ALE fixes (equivalent to :ALEFix)
-nmap <leader>f <Plug>(ale_fix)
+nmap <leader>af <Plug>(ale_fix)
+
+"\+n goes to next ALE error (similar to :ALENext)
+nmap <leader>an <Plug>(ale_next_wrap)
+
+"\+f goes to previous ALE error (similar to :ALEPrevious)
+nmap <leader>ap <Plug>(ale_previous_wrap)
 
 "gvim-specific settings
 if has('gui_running')
