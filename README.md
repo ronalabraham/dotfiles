@@ -2,9 +2,9 @@
 My dotfile repository, using dotbot for bootstrapping (see https://github.com/anishathalye/dotbot).
 
 ## Required Packages
-To install prerequisite packages on Ubuntu, run:
+To install prerequisite packages on Ubuntu or MacOS, run:
 ```bash
-install_packages.sh
+install_prerequisites.sh
 ```
 
 ## Installation
