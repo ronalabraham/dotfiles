@@ -10,24 +10,26 @@ cnoremap jk <C-f>
 nnoremap <C-j> <C-d>
 nnoremap <C-k> <C-u>
 
-"Ctrl_w,h moves left one split
-"Ctrl+w,j moves down one split
-"Ctrl+w,k moves up one split
-"Ctrl+w,l moves right one split
-"Ctrl+w,\ moves to previous split
-"  github.com/christoomey/vim-tmux-navigator
-nnoremap <silent> <C-w>h :TmuxNavigateLeft<cr>
-nnoremap <silent> <C-w>j :TmuxNavigateDown<cr>
-nnoremap <silent> <C-w>k :TmuxNavigateUp<cr>
-nnoremap <silent> <C-w>l :TmuxNavigateRight<cr>
-nnoremap <silent> <C-w>\ :TmuxNavigatePrevious<cr>
-
 "Ctrl+w,_ splits window horizontally
 "Ctrl+w,| splits window vertically
 "Ctrl+w,x closes current window (note: use Ctrl+w,Ctrl+x to exchange)
 noremap <C-w>_ <C-w>s
 noremap <C-w><Bar> <C-w>v
 noremap <C-w>x <C-w>c
+
+"Alt-h,j,k,l used to navigate between tmux *and* vim splits
+"  github.com/christoomey/vim-tmux-navigator
+"  https://vi.stackexchange.com/a/2363/21510
+execute "set <M-h>=\eh"
+execute "set <M-j>=\ej"
+execute "set <M-k>=\ek"
+execute "set <M-l>=\el"
+execute "set <M-\\>=\e\\"
+nnoremap <M-h> :TmuxNavigateLeft<cr>
+nnoremap <M-j> :TmuxNavigateDown<cr>
+nnoremap <M-k> :TmuxNavigateUp<cr>
+nnoremap <M-l> :TmuxNavigateRight<cr>
+nnoremap <M-\> :TmuxNavigatePrevious<cr>
 
 "Tab moves to next buffer (in normal mode)
 "Shift+Tab moves to next buffer (in normal mode)
