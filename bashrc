@@ -78,38 +78,39 @@ xterm*|rxvt*)
     ;;
 esac
 
-# enable color support of ls and also add handy aliases
+# define gnu utilities on different OSes
 os=`uname -s`
 case $os in
-    "Darwin" )
-        # ls
-        export LSCOLORS=HxfxcxdxCxegedabagacad
-        alias ls='ls -G'
-
-        # grep
-        alias grep='grep --color=auto'
-
-        # tree
-        LS_COLORS="rs=0:di=01;37:ln=target:mh=00:pi=40;33:so=01;35:do=01;35"
-        LS_COLORS="$LS_COLORS:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41"
-        LS_COLORS="$LS_COLORS:sg=30;43:ca=30;41:tw=30;42:ow=01;42:st=37;44"
-        LS_COLORS="$LS_COLORS:ex=01;32"
-        export LS_COLORS
-        alias tree='tree -C'
+    "Darwin")
+        gnu_dircolors=/usr/local/bin/gdircolors
+        gnu_ls=gls
+        gnu_dir=gdir
+        gnu_vdir=gvdir
+        gnu_grep=ggrep
+        gnu_fgrep=gfgrep
+        gnu_egrep=gegrep
         ;;
-    "Linux"  )
-        if [ -x /usr/bin/dircolors ]; then
-            test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-            alias ls='ls --color=auto'
-            alias dir='dir --color=auto'
-            alias vdir='vdir --color=auto'
-
-            alias grep='grep --color=auto'
-            alias fgrep='fgrep --color=auto'
-            alias egrep='egrep --color=auto'
-        fi
+    *       )
+        gnu_dircolors=/usr/bin/dircolors
+        gnu_ls=ls
+        gnu_dir=dir
+        gnu_vdir=vdir
+        gnu_grep=grep
+        gnu_fgrep=fgrep
+        gnu_egrep=egrep
         ;;
 esac
+
+# enable color support of ls and also add handy aliases
+if [ -x $gnu_dircolors ]; then
+    test -r ~/.dircolors && eval "$($gnu_dircolors -b ~/.dircolors)" || eval "$($gnu_dircolors -b)"
+    alias ls='$gnu_ls --color=auto'
+    alias dir='$gnu_dir --color=auto'
+    alias vdir='$gnu_vdir --color=auto'
+fi
+alias grep='$gnu_grep --color=auto'
+alias fgrep='$gnu_fgrep --color=auto'
+alias egrep='$gnu_egrep --color=auto'
 
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
