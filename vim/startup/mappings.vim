@@ -96,59 +96,63 @@ noremap <C-w><Bar> <C-w>v
 
 "Setup for vim-easymotion
 "------------------------
-", is the easymotion prefix
-",w triggers bidirectional (beginning of) word jumping
-",e triggers bidirectional (end of) word jumping
-",l triggers bidirectional line jumping
-",/ triggers bidirectional last-search jumping
-map , <Plug>(easymotion-prefix)
-map ,w <Plug>(easymotion-bd-w)
-map ,e <Plug>(easymotion-bd-e)
-map ,l <Plug>(easymotion-bd-jk)
-map ,/ <Plug>(easymotion-bd-n)
+"Note that <leader><leader> is the default easymotion prefix
+let mapleader = ","
 
-"Leader key mappings
-"-------------------
-"\s reloads (sources) $MYVIMRC
+",w triggers bidirectional (beginning of) word jumping
+map <leader>w <Plug>(easymotion-bd-w)
+
+",e triggers bidirectional (end of) word jumping
+map <leader>e <Plug>(easymotion-bd-e)
+
+",l triggers bidirectional line jumping
+map <leader>l <Plug>(easymotion-bd-jk)
+
+",/ triggers bidirectional last-search jumping
+map <leader>/ <Plug>(easymotion-bd-n)
+
+"Other leader key mappings
+"------------------------
+",r reloads (sources) $MYVIMRC
 nnoremap <leader>r :source $MYVIMRC<cr>
 
-"\v opens $MYVIMRC for editing
+",v opens $MYVIMRC for editing
 nnoremap <leader>v :e $MYVIMRC<cr>
 
-"\+Tab toggles tab size
+",+Tab toggles tab size
 nnoremap <leader><tab> :call TabToggle()<CR>
 
-"\+cc toggles the colorcolumn
+",+cc toggles the colorcolumn
 nnoremap <leader>cc :call ColorColumnToggle()<CR>
 
-"\+ws toggles showing unprintable characters; see also: vim.wikia.com/wiki/Managing_set_options
-nnoremap <leader>ws :call UnprintableToggle()<CR>
+",+ws toggles showing unprintable characters; see also: vim.wikia.com/wiki/Managing_set_options
+nnoremap <leader>ss :call UnprintableToggle()<CR>
 
-"\+ts removes trailing whitespaces
+",+ts removes trailing whitespaces
 nnoremap <leader>ts :call TrimTrailingWhitespaces()<CR>
 
-"\+aw toggles auto-wrapping while editting
+",+aw toggles auto-wrapping while editting
 nnoremap <leader>aw :call EditAutoWrapToggle()<CR>
 
-"\+nt toggles nerd tree browser
+",+nt toggles nerd tree browser
 nnoremap <leader>nt :NERDTreeToggle<CR>
 
-"\+tb toggles tagbar browser
+",+tb toggles tagbar browser
 nnoremap <leader>tb :TagbarToggle<CR>
 
-"\+us edits UltiSnips snippets file
+",+us edits UltiSnips snippets file
 nnoremap <leader>us :UltiSnipsEdit<CR>
 
-"\+l applies ALE linting (equivalent to :ALELint)
+",+l applies ALE linting (equivalent to :ALELint)
 nmap <leader>al <Plug>(ale_lint)
 
-"\+f applies ALE fixes (equivalent to :ALEFix)
+",+f applies ALE fixes (equivalent to :ALEFix)
 nmap <leader>af <Plug>(ale_fix)
 
-"\+n goes to next ALE error (similar to :ALENext)
+",+n goes to next ALE error (similar to :ALENext)
 nmap <leader>an <Plug>(ale_next_wrap)
 
-"\+f goes to previous ALE error (similar to :ALEPrevious)
+",+f goes to previous ALE error (similar to :ALEPrevious)
 nmap <leader>ap <Plug>(ale_previous_wrap)
 
 "gvim-specific settings
