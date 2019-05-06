@@ -7,8 +7,12 @@ cnoremap jk <C-f>
 
 "Ctrl+j maps to Page Down in normal mode
 "Ctrl+k maps to Page Up in normal mode
+"Ctrl+h moves 10 spaces to left
+"Ctrl+l maps 10 spaces to the right
 nnoremap <C-j> <C-d>
 nnoremap <C-k> <C-u>
+nnoremap <C-h> 10h
+nnoremap <C-l> 10l
 
 "Ctrl+w,_ splits window horizontally
 "Ctrl+w,| splits window vertically
