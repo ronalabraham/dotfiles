@@ -1,9 +1,8 @@
 # bash aliases
 
 # ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
 alias l='ls -ltr'
+alias ll='ls -alF'
 
 # prevent accidental clobbering of files
 alias cp='cp -i'

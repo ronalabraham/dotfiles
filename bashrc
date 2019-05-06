@@ -128,6 +128,11 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+# Bash completion definitions.
+# You may want to put all your additions into a separate file like
+# ~/.bash_completion, instead of adding them here directly.
+[ -f ~/.bash_completion ] && source ~/.bash_completion
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).

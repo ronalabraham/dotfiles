@@ -8,6 +8,7 @@
 - link:
     ~/.bashrc: bashrc
     ~/.bash_aliases: bash_aliases
+    ~/.bash_completion: bash_completion
     ~/.bash_profile: bash_profile
     ~/.ctags: ctags
     ~/.dircolors: dircolors

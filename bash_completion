@@ -1,0 +1,4 @@
+# fzf completion support for 'tree' and my 'ls' aliases
+complete -F _fzf_dir_completion -o default -o bashdefault tree
+complete -F _fzf_path_completion -o default -o bashdefault l
+complete -F _fzf_path_completion -o default -o bashdefault ll
