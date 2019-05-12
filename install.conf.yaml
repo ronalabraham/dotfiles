@@ -12,6 +12,7 @@
     ~/.bash_profile: bash_profile
     ~/.ctags: ctags
     ~/.dircolors: dircolors
+    ~/.eclipse.jdt.ls: eclipse.jdt.ls
     ~/.fzf: fzf
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
@@ -23,7 +24,11 @@
     ~/.vimrc: vimrc
 
 - shell:
-    - [git submodule update --init --recursive, Installing submodules]
+    - command: git submodule update --init --remote --recursive
+      description: Installing and updating all git submodules
+      stdin: true
+      stdout: true
+      stderr: true
     - command: tmux new-session -d -s tmux_bootstrap
     - command: ~/.tmux/plugins/tpm/scripts/install_plugins.sh
       description: Installing tmux plugins
@@ -31,15 +36,25 @@
       stdout: true
       stderr: true
     - command: tmux kill-session -t tmux_bootstrap
-    - command: vim +PluginInstall +qall
-      stdin: true
-      stdout: true
-      stderr: true
     - command: ~/.fzf/install --all --no-zsh
+      description: Installing fzf
       stdin: true
       stdout: true
       stderr: true
-    - command: ~/.vim/bundle/YouCompleteMe/install.py --clang-completer
+    - command: vim +PlugClean +PlugUpgrade! +PlugUpdate! +qall
+      description: Installing and/or updating vim plugins with vim-plug
+      stdin: true
+      stdout: true
+      stderr: true
+    - command: echo todo
+      description: "TODO: this is a place holder for getting \
+          google-java-format to work on Linux. Right now, I'm only using it \
+          on a Mac."
+      stdin: true
+      stdout: true
+      stderr: true
+    - command: cd ~/.eclipse.jdt.ls; ./mvnw clean verify
+      description: Build eclipse.jdt.ls, a Java LangServer
       stdin: true
       stdout: true
       stderr: true

@@ -10,6 +10,7 @@ case $os in
             ctags \
             git \
             gnu-sed \
+            google-java-format \
             gradle \
             grep \
             hub \

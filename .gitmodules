@@ -1,12 +1,20 @@
 [submodule "dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot
+	branch = master
 [submodule "tmux/plugins/tpm"]
 	path = tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
-[submodule "vim/bundle/Vundle.vim"]
-	path = vim/bundle/Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim
+	branch = master
 [submodule "fzf"]
 	path = fzf
 	url = https://github.com/junegunn/fzf.git
+	branch = master
+[submodule "eclipse.jdt.ls"]
+	path = eclipse.jdt.ls
+	url = https://github.com/eclipse/eclipse.jdt.ls
+	branch = master
+[submodule "vim-plug"]
+	path = vim-plug
+	url = https://github.com/junegunn/vim-plug
+	branch = master

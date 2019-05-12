@@ -2,56 +2,45 @@
 
 let g:platform = GetPlatform()
 
-"START Vundle setup
-set nocompatible              " be iMproved, required
-filetype off                  " required
-
-"set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-"alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
-
-"let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+call plug#begin('~/.vim/bundle')
 
 "vim-airline for pretty status/tab lines
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 let g:airline#extensions#tabline#enabled = 1        "enable buffer list
 let g:airline#extensions#tabline#fnamemod = ':t'    "show just the filename
 
 "vim-fontdetect helps detect which fonts are available in vim
-Plugin 'drmikehenry/vim-fontdetect'
+Plug 'drmikehenry/vim-fontdetect'
 
 "vim-scala for scala syntax highlighting and more
-Plugin 'derekwyatt/vim-scala'
+Plug 'derekwyatt/vim-scala'
 
-"vim-colors-solarized plugin for solarized colorscheme
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'sainnhe/vim-color-forest-night'
-Plugin 'cseelus/vim-colors-lucid'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'nightsense/snow'
+"plugins for colorschemes
+Plug 'altercation/vim-colors-solarized'
+Plug 'sainnhe/vim-color-forest-night'
+Plug 'cseelus/vim-colors-lucid'
+Plug 'nanotech/jellybeans.vim'
+Plug 'nightsense/snow'
 
 "vim-easymotion to move around quickly
-Plugin 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 
 "vim git command-line wrapper (and more)
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 "vim tag browser
-Plugin 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 
-"ultisnippets for fast editing
-Plugin 'SirVer/ultisnips'
+"ultisnippets for fast snippets
+Plug 'SirVer/ultisnips'
 let g:UltiSnipsExpandTrigger="<c-j>"        " Ctrl+j triggers UltiSnips expansion
 let g:UltiSnipsJumpForwardTrigger="<c-f>"   " Ctrl+f jumps to next snippet
 let g:UltiSnipsJumpBackwardTrigger="<c-b>"  " Ctrl+b jumps to previous snippet
 let g:UltiSnipsEditSplit="vertical"         " :UltiSnipsEdit splits window vertically
 
 "nerdtree to browse files
-Plugin 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 let g:nerdtree_tabs_open_on_gui_startup = 0
 let NERDTreeIgnore = ['\.pyc$', '\.tsk$', '\.o$']
 let NERDTreeDirArrows=0
@@ -60,19 +49,19 @@ let NERDTreeShowBookmarks=1
 "linux-specific plugins
 if (g:platform != "AIX")
 "YouCompleteMe, a fast, as-you-type code completion engine for Vim
-    Plugin 'Valloric/YouCompleteMe'
+    Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
     let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
     let g:ycm_autoclose_preview_window_after_insertion = 1
     let g:ycm_autoclose_preview_window_after_completion = 1
 endif
 
 "black for Python code formatting
-Plugin 'ambv/black'
+Plug 'ambv/black'
 let g:black_linelength=79
 let g:black_virtualenv="~/.vim_black"
 
 "ale for linting and formatting
-Plugin 'w0rp/ale'
+Plug 'w0rp/ale'
 let g:airline#extensions#ale#enabled = 1                        "I use airline, so why not?
 let g:ale_echo_msg_error_str = 'ERROR'                          "Bloomberg ball-style
 let g:ale_echo_msg_warning_str = 'WARN '                        "Bloomberg ball-style
@@ -90,27 +79,32 @@ let g:ale_sign_error = '!>'                "looks better
 let g:ale_sign_warning = '->'              "looks better
 
 "vim-tmux-navigator to navigate between tmux and vim splits cleanly
-Plugin 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 let g:tmux_navigator_no_mappings = 1          "use custom mappings (see mappings.vim)
 let g:tmux_navigator_disable_when_zoomed = 1  "navigation keys do not unzoom zoomed pane
 
-"all of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
-"END Vundle setup
+"fuzzy finder support in vim. Note that I installed fzf support with git:
+"    https://github.com/junegunn/fzf#as-vim-plugin
+Plug '~/.fzf'
+
+"LanguageClient-neovim for LangServer support (https://langserver.org/)
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+let g:LanguageClient_serverCommands = {
+    \ 'java': ['~/.vim/startup/jdtls.sh', '-data', getcwd()],
+    \ }
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
+
+
+call plug#end()
 
 "plugins I want to try
-"Plugin 'scrooloose/syntastic'
-"Plugin 'benmills/vimux'
-"Plugin 'tpope/vim-speeddating'
+"Plug 'scrooloose/syntastic'
+"Plug 'benmills/vimux'
+"Plug 'tpope/vim-speeddating'

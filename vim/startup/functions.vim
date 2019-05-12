@@ -100,3 +100,15 @@ function! GetPlatform()
         return "Unknown"
     endif
 endfunction
+
+"build YouCompleteMe compiled component
+"    https://github.com/junegunn/vim-plug#post-update-hooks
+function! BuildYCM(info)
+    " info is a dictionary with 3 fields
+    " - name:   name of the plugin
+    " - status: 'installed', 'updated', or 'unchanged'
+    " - force:  set on PlugInstall! or PlugUpdate!
+    if a:info.status == 'installed' || a:info.status == 'updated' || a:info.force
+        silent !./install.py --clang-completer
+    endif
+endfunction

@@ -11,6 +11,8 @@ install_prerequisites.sh
 ```bash
 git clone https://github.com/ronalabraham/dotfiles.git ~/.dotfiles && ~/.dotfiles/install
 ```
+You may need to set `$JAVA_HOME` (i.e. `JAVA_HOME=<path-to-a-jdk8> ~/.dotfiles/install`) if `$JAVA_HOME` is undefined or points to a newer Java version, because eclipse.jdt.ls (Java LangServer) only builds with Java 8.
+
 ## Customization
 You can make customizations for the following programs by editing their (untracked) configuration files on your machine:
 
