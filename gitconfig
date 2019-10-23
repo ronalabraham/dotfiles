@@ -1,24 +1,24 @@
 [user]
-	name = Ronal Abraham
-	email = ronalabraham@gmail.com
+    name = Ronal Abraham
+    email = ronalabraham@gmail.com
 [core]
-	editor = vim
-	excludesfile = ~/.gitignore_global
+    editor = vim
+    excludesfile = ~/.gitignore_global
 [alias]
-	br = branch
-	ci = commit
-	ci-q = commit -a --amend --no-edit
-	co = checkout
-	cp = cherry-pick
-	lg = log --graph --decorate --oneline
-	rb = rebase
-	st = status
+    br = branch
+    ci = commit
+    ci-q = commit -a --amend --no-edit
+    co = checkout
+    cp = cherry-pick
+    lg = log --graph --decorate --oneline
+    rb = rebase
+    st = status
     top = rev-parse --show-toplevel
 [credential]
-	helper = cache --timeout=3600
+    helper = cache --timeout=3600
 [difftool]
-	prompt = false
+    prompt = false
 [include]
-	path = ~/.gitconfig_local
+    path = ~/.gitconfig_local
 [push]
-	default = simple
+    default = simple
