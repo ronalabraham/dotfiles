@@ -125,7 +125,7 @@ nnoremap <leader><tab> :call TabToggle()<CR>
 ",+cc toggles the colorcolumn
 nnoremap <leader>cc :call ColorColumnToggle()<CR>
 
-",+ws toggles showing unprintable characters; see also: vim.wikia.com/wiki/Managing_set_options
+",+ss toggles showing unprintable characters; see also: vim.wikia.com/wiki/Managing_set_options
 nnoremap <leader>ss :call UnprintableToggle()<CR>
 
 ",+ts removes trailing whitespaces
