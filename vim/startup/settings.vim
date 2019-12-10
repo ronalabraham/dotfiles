@@ -67,6 +67,9 @@ set encoding=utf-8
 set splitbelow
 set splitright
 
+"spelling (in normal mode: z= to suggest corrections, zg to add word to the dictionary)
+set spell spelllang=en_us spellfile=~/.vim/spell/en.utf-8.add
+
 "enable use of the mouse
 "  https://vi.stackexchange.com/a/521
 set mouse=a
