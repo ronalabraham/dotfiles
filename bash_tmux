@@ -1,0 +1,7 @@
+# only run in tmux sessions
+if [ -z "$TMUX" ] ; then
+    return
+fi
+
+# set current pane title to command running in it
+tmux select-pane -T '#{pane_current_command}'

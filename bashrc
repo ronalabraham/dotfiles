@@ -144,4 +144,10 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Tmux hooks.
+# This script contains any tmux-related setup for new bash shells.
+if [ -f ~/.bash_tmux ]; then
+    . ~/.bash_tmux
+fi
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

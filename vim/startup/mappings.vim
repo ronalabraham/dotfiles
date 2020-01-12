@@ -89,11 +89,6 @@ vnoremap <Tab> >><Esc>gv
 vnoremap <S-Tab> <<<Esc>gv
 nnoremap <silent> <CR> :call InsertOrAppendMode()<CR><CR><Esc>
 
-"Ctrl+w,_ splits window horizontally
-"Ctrl+w,| splits window vertically
-noremap <C-w>_ <C-w>s
-noremap <C-w><Bar> <C-w>v
-
 "Setup for vim-easymotion
 "------------------------
 "Note that <leader><leader> is the default easymotion prefix
