@@ -9,6 +9,7 @@
     ~/.bashrc: bashrc
     ~/.bash_aliases: bash_aliases
     ~/.bash_completion: bash_completion
+    ~/.bash_preexec: bash-preexec/bash-preexec.sh
     ~/.bash_profile: bash_profile
     ~/.bash_tmux: bash_tmux
     ~/.ctags: ctags

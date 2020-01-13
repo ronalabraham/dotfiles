@@ -3,5 +3,14 @@ if [ -z "$TMUX" ] ; then
     return
 fi
 
-# set current pane title to command running in it
-tmux select-pane -T '#{pane_current_command}'
+# Script arguments
+# -----------------------------------------------------------------------------
+# "$1" = pane title (optional)
+
+if [ "$#" -eq 0 ]; then
+    # set current pane title to command running in it
+    tmux select-pane -T '#{pane_current_command}'
+else
+    # set current pane title to the first argument
+    tmux select-pane -T "$1"
+fi

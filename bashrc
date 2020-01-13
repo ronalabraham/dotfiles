@@ -150,4 +150,23 @@ if [ -f ~/.bash_tmux ]; then
     . ~/.bash_tmux
 fi
 
+# Enable fzf.
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# Enable bash_preexec. Also define a 'preexec_bash_tmux()' function that
+# executes just before every bash command is processed. For more details, see
+# https://github.com/rcaloras/bash-preexec.
+[[ -f ~/.bash_preexec ]] && source ~/.bash_preexec
+
+preexec_bash_tmux()
+{
+    # Execute ~/.bash_tmux with the current command being run.
+    local bash_cmd="$1"
+    local MAX_TITLE_LEN=32
+    if [ ${#bash_cmd} -gt $MAX_TITLE_LEN ]; then
+        bash_cmd="${bash_cmd:0:$(expr $MAX_TITLE_LEN - 3)}..."
+    fi
+    . ~/.bash_tmux "$bash_cmd"
+}
+
+preexec_functions+=(preexec_bash_tmux)

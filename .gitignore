@@ -2,3 +2,4 @@ vim/bundle/*
 tmux/plugins/*
 !tmux/plugins/tpm
 vim/undo/*
+vim/.netrwhist
