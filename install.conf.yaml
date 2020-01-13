@@ -26,7 +26,7 @@
     ~/.vimrc: vimrc
 
 - shell:
-    - command: git submodule update --init --remote --recursive
+    - command: git submodule update --init --recursive
       description: Installing and updating all git submodules
       stdin: true
       stdout: true
