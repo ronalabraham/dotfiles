@@ -170,3 +170,9 @@ preexec_bash_tmux()
 }
 
 preexec_functions+=(preexec_bash_tmux)
+
+precmd_bash_tmux()
+{
+    . ~/.bash_tmux
+}
+precmd_functions+=(precmd_bash_tmux)
