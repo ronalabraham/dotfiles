@@ -9,7 +9,6 @@
     ~/.bashrc: bashrc
     ~/.bash_aliases: bash_aliases
     ~/.bash_completion: bash_completion
-    ~/.bash_preexec: bash-preexec/bash-preexec.sh
     ~/.bash_profile: bash_profile
     ~/.bash_tmux: bash_tmux
     ~/.ctags: ctags
@@ -31,6 +30,11 @@
       stdin: true
       stdout: true
       stderr: true
+
+- link:
+    ~/.bash_preexec: bash-preexec/bash-preexec.sh
+
+- shell:
     - command: tmux new-session -d -s tmux_bootstrap
     - command: ~/.tmux/plugins/tpm/scripts/install_plugins.sh
       description: Installing tmux plugins
