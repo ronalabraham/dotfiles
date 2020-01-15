@@ -26,9 +26,6 @@ Plug 'nightsense/snow'
 "vim-easymotion to move around quickly
 Plug 'easymotion/vim-easymotion'
 
-"vim git command-line wrapper (and more)
-Plug 'tpope/vim-fugitive'
-
 "vim tag browser
 Plug 'majutsushi/tagbar'
 

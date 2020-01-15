@@ -160,7 +160,7 @@ fi
 
 preexec_bash_tmux()
 {
-    # Execute ~/.bash_tmux with the current command being run.
+    # Execute ~/.bash_tmux with the current command being run (truncated).
     local bash_cmd="$1"
     local MAX_TITLE_LEN=32
     if [ ${#bash_cmd} -gt $MAX_TITLE_LEN ]; then
@@ -173,6 +173,7 @@ preexec_functions+=(preexec_bash_tmux)
 
 precmd_bash_tmux()
 {
+    # Execute ~/.bash_tmux.
     . ~/.bash_tmux
 }
 precmd_functions+=(precmd_bash_tmux)
