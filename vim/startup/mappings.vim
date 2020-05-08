@@ -64,6 +64,10 @@ nnoremap <C-x> :bp\|bd #<CR>
 noremap <C-s> :w<CR>
 inoremap <C-S> <Esc>:w<CR>
 
+"Backspace and Delete do nothing in normal mode
+nnoremap <BS> <nop>
+nnoremap <Del> <nop>
+
 "Ctrl+backspace deletes previous word
 "  vim.wikia.com/wiki/Map_Ctrl-Backspace_to_delete_previous_word
 inoremap <C-w> <C-\><C-o>dB

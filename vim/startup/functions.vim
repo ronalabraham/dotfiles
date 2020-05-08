@@ -109,6 +109,8 @@ function! BuildYCM(info)
     " - status: 'installed', 'updated', or 'unchanged'
     " - force:  set on PlugInstall! or PlugUpdate!
     if a:info.status == 'installed' || a:info.status == 'updated' || a:info.force
-        silent !./install.py --clang-completer
+        silent !./install.py
+                             "--clang-completer (disabling clang-completer for
+                             "now; it's too noisy for C++ until I can fix it)
     endif
 endfunction
