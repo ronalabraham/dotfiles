@@ -4,6 +4,12 @@ syntax on
 
 "miscellaneous
 set nocompatible
+set noesckeys                                   "stop annoying delay when
+                                                "pressing Esc key
+"read :help noesckeys. This causes function and arrow keys to stop working in
+"insert mode. An alternative option is to play with timeoutlen and ttimeoutlen.
+"See the following URL for more info:
+"https://vi.stackexchange.com/questions/10249/what-is-the-difference-between-mapped-key-sequences-and-key-codes-timeoutl
 
 "tabs and indents
 set autoindent                                  "copy indent from current line when starting new line
