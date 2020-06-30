@@ -142,17 +142,20 @@ nnoremap <leader>tb :TagbarToggle<CR>
 ",+us edits UltiSnips snippets file
 nnoremap <leader>us :UltiSnipsEdit<CR>
 
-",+l applies ALE linting (equivalent to :ALELint)
+",+al applies ALE linting (equivalent to :ALELint)
 nmap <leader>al <Plug>(ale_lint)
 
-",+f applies ALE fixes (equivalent to :ALEFix)
+",+af applies ALE fixes (equivalent to :ALEFix)
 nmap <leader>af <Plug>(ale_fix)
 
-",+n goes to next ALE error (similar to :ALENext)
+",+an goes to next ALE error (similar to :ALENext)
 nmap <leader>an <Plug>(ale_next_wrap)
 
-",+f goes to previous ALE error (similar to :ALEPrevious)
+",+af goes to previous ALE error (similar to :ALEPrevious)
 nmap <leader>ap <Plug>(ale_previous_wrap)
+
+",+at disable ALE for the current buffer (equivalent to :ALEToggleBuffer)
+nmap <leader>at <Plug>(ale_toggle_buffer)
 
 "gvim-specific settings
 if has('gui_running')
