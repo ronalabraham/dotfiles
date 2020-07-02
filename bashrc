@@ -150,8 +150,17 @@ if [ -f ~/.bash_tmux ]; then
     . ~/.bash_tmux
 fi
 
-# Enable fzf.
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+# Enable fzf, but only on Linux and Mac; we will assume the fzf executable is
+# not supported on other architectures. See https://github.com/junegunn/fzf for
+# more information about the fzf executable.
+case $os in
+    "Linux" ) enable_fzf=yes;;
+    "Darwin") enable_fzf=yes;;
+esac
+
+if [ "$enable_fzf" = yes ]; then
+    [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+fi
 
 # Enable bash_preexec. Also define a 'preexec_bash_tmux()' function that
 # executes just before every bash command is processed. For more details, see
