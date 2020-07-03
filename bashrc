@@ -160,6 +160,7 @@ esac
 
 if [ "$enable_fzf" = yes ]; then
     [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+    [ -f ~/.fzf.bash_completion ] && source ~/.fzf.bash_completion
 fi
 
 # Enable bash_preexec. Also define a 'preexec_bash_tmux()' function that

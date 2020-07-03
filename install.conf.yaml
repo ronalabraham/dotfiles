@@ -15,6 +15,7 @@
     ~/.dircolors: dircolors
     ~/.eclipse.jdt.ls: eclipse.jdt.ls
     ~/.fzf: fzf
+    ~/.fzf.bash_completion: fzf.bash_completion
     ~/.gitconfig: gitconfig
     ~/.gitignore_global: gitignore_global
     ~/.git-prompt.sh: git-prompt.sh
