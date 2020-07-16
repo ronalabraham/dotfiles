@@ -41,3 +41,4 @@ case $os in
             vim
             ;;
 esac
+pip3 install cmake_format
