@@ -46,6 +46,7 @@ pip3 install \
     black \
     cmake_format \
     flake8 \
+    gitpython \
     isort \
     mypy \
     pylint
