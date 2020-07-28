@@ -53,7 +53,7 @@ if (g:platform != "AIX")
 endif
 
 "black for Python code formatting
-Plug 'ambv/black'
+Plug 'psf/black'
 let g:black_linelength=79
 let g:black_virtualenv="~/.vim_black"
 
