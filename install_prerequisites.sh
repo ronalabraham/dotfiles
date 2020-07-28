@@ -42,4 +42,10 @@ case $os in
             vim
             ;;
 esac
-pip3 install black cmake_format flake8 mypy pylint
+pip3 install \
+    black \
+    cmake_format \
+    flake8 \
+    isort \
+    mypy \
+    pylint
