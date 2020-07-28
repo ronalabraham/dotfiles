@@ -1,6 +1,6 @@
 #!/bin/bash
 
-os=`uname -s`
+os=$(uname -s)
 case $os in
     "Darwin")
         brew install \
@@ -20,6 +20,7 @@ case $os in
             openssl \
             pstree \
             python \
+            python3 \
             readline \
             sqlite \
             tmux \
@@ -41,4 +42,4 @@ case $os in
             vim
             ;;
 esac
-pip3 install cmake_format
+pip3 install black cmake_format flake8 mypy pylint
