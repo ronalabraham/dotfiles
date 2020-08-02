@@ -48,6 +48,8 @@ if has("persistent_undo")                       "persist undo/redo history on di
     set undodir=~/.vim/undo
 endif
 set formatoptions-=t                            "do not autowrap text while typing
+set formatoptions+=cro                          "autowrap comments using the
+                                                "commend leader
 set pastetoggle=<F10>                           "F1O toggles paste mode
 
 "searching text
