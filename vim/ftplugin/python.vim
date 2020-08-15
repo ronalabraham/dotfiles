@@ -1,6 +1,5 @@
 "Check CMake files with the following linters
 let b:ale_linters = [
-            \'pycodestyle',
             \'flake8',
             \'mypy',
             \'pylint']
