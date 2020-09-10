@@ -49,4 +49,5 @@ pip3 install \
     gitpython \
     isort \
     mypy \
+    pydocstyle \
     pylint

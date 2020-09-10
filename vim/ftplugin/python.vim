@@ -2,6 +2,7 @@
 let b:ale_linters = [
             \'flake8',
             \'mypy',
+            \'pydocstyle',
             \'pylint']
 
 "Fix CMake files with the following fixers
