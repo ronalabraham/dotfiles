@@ -10,7 +10,7 @@
     ci-q = commit -a --amend --no-edit
     co = checkout
     cp = cherry-pick
-    lg = log --graph --decorate --oneline
+    lg = log --graph --decorate --oneline --all
     rb = rebase
     st = status
     top = rev-parse --show-toplevel
