@@ -70,10 +70,11 @@ set ruler                                       "show comma-separated cursor lin
 "encoding
 set encoding=utf-8
 
-"more natural split opening
-"  thoughtbot.com/blog/vim-splits-move-faster-and-more-naturally
-set splitbelow
-set splitright
+"splits
+set splitbelow                                  "more natural split opening
+set splitright                                  "  thoughtbot.com/blog/vim-splits-move-faster-and-more-naturally
+set noequalalways                               "stop automatically equi-sizing
+                                                "on split
 
 "spelling (in normal mode: z= to suggest corrections, zg to add word to the dictionary)
 set spell spelllang=en_us spellfile=~/.vim/spell/en.utf-8.add
