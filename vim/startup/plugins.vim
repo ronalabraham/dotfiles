@@ -40,7 +40,7 @@ let g:UltiSnipsEditSplit="vertical"         " :UltiSnipsEdit splits window verti
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 let g:nerdtree_tabs_open_on_gui_startup = 0
 let NERDTreeShowHidden=1
-let NERDTreeIgnore = ['\.pyc$', '\.git$', '\.tsk$', '\.o$']
+let NERDTreeIgnore = ['\.pyc$', '\.git$', '\.tsk$', '\.o$', '\.swp$']
 let NERDTreeDirArrows=0
 let NERDTreeShowBookmarks=1
 
