@@ -7,7 +7,7 @@ syntax enable
 set background=dark
 
 if has('gui_running')
-    colorscheme desert
+    silent! colorscheme desert
 else
-    colorscheme solarized
+    silent! colorscheme solarized
 endif
