@@ -53,11 +53,6 @@ if (g:platform != "AIX")
     let g:ycm_autoclose_preview_window_after_completion = 1
 endif
 
-"black for Python code formatting
-Plug 'psf/black'
-let g:black_linelength=79
-let g:black_virtualenv="~/.vim_black"
-
 "ale for linting and formatting
 Plug 'w0rp/ale'
 let g:airline#extensions#ale#enabled = 1                        "I use airline, so why not?
