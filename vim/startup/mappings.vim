@@ -64,6 +64,9 @@ nnoremap <C-x> :bp\|bd #<CR>
 noremap <C-s> :w<CR>
 inoremap <C-S> <Esc>:w<CR>
 
+"Ctrl+a selects the entire buffer.
+nnoremap <C-a> ggVG
+
 "Backspace and Delete do nothing in normal mode
 nnoremap <BS> <nop>
 nnoremap <Del> <nop>
