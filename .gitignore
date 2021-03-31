@@ -1,5 +1,6 @@
 vim/bundle/*
 tmux/plugins/*
+tmux/resurrect
 !tmux/plugins/tpm
 vim/undo/*
 vim/.netrwhist
