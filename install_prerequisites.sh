@@ -42,7 +42,7 @@ case $os in
             vim
             ;;
 esac
-pip3 install \
+python3 -m pip install \
     black \
     cmake_format \
     flake8 \
