@@ -4,11 +4,12 @@ syntax on
 
 "miscellaneous
 set nocompatible
-set noesckeys                                   "stop annoying delay when
-                                                "pressing Esc key
-"read :help noesckeys. This causes function and arrow keys to stop working in
-"insert mode. An alternative option is to play with timeoutlen and ttimeoutlen.
-"See the following URL for more info:
+set ttimeoutlen=10                              "reduce annoying delay when
+                                                "pressing Esc key to 10ms
+"This was taken from here:
+"    https://stackoverflow.com/questions/8813855/in-vim-how-can-i-make-esc-and-arrow-keys-work-in-insert-mode
+"An alternative option is `:help noesckeys`, but this causes function and arrow
+"keys to stop working in insert mode. "See the following URL for more info:
 "https://vi.stackexchange.com/questions/10249/what-is-the-difference-between-mapped-key-sequences-and-key-codes-timeoutl
 
 "tabs and indents
