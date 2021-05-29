@@ -53,6 +53,8 @@ nnoremap <A-p> :bprevious<CR>:redraw<CR>:ls<CR>
 "Ctrl+x closes the current buffer
 "  stackoverflow.com/questions/4465095/vim-delete-buffer-without-losing-the-split-window
 "Ctrl+s saves the current buffer
+"Ctrl+p does what ctrl+v normally does: enter the next non-digit literally
+"  (see :h i CTRL-V)
 nnoremap <C-z> u
 inoremap <C-z> <C-\><C-o>u
 nnoremap <C-y> <C-R>
@@ -63,6 +65,7 @@ inoremap <C-v> <C-r><C-o>+
 nnoremap <C-x> :bp\|bd #<CR>
 noremap <C-s> :w<CR>
 inoremap <C-S> <Esc>:w<CR>
+inoremap <C-p> <C-v>
 
 "Ctrl+a selects the entire buffer.
 nnoremap <C-a> ggVG
