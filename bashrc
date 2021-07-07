@@ -187,3 +187,5 @@ precmd_bash_tmux()
     . ~/.bash_tmux
 }
 precmd_functions+=(precmd_bash_tmux)
+
+[[ -r ~/.bashrc_local ]] && . ~/.bashrc_local
