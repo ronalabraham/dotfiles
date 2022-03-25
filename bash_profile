@@ -18,7 +18,7 @@ function git_branch() {
 }
 
 # Set command line prompt.
-PS1='\[\033[01;32m\]\u\[\033[00m\]@\[\033[00;32m\]\h\[\033[00m\]:${PWD}\[\033[00m\]\[\033[00;31m\]$(git_branch)\n\[\033[00;32m\][\D{%H:%M:%S}] \[\033[00m\]$ \[\033[01;97m\]'
+PS1='\[\033[01;32m\]\u\[\033[00m\]@\[\033[00;32m\]\h\[\033[00m\]:${PWD}\[\033[00m\]\[\033[00;31m\]$(git_branch)\n\[\033[00;32m\][\D{%H:%M:%S}] \[\033[00m\]$ \[\033[00;97m\]'
 
 # Reset formatting after typing a command (before the output is displayed); see:
 #     https://wiki.archlinux.org/title/Bash/Prompt_customization#Escapes_between_command_input_and_output
