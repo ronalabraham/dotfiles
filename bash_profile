@@ -24,7 +24,7 @@ function prompt() {
     local WHITE="\[\033[00;97m\]"
     local NONE="\[\033[00m\]"
 
-    PS1="${BOLD_GREEN}\u${NONE}@${GREEN}\h${NONE}:${PWD}${RED}$(git_branch)${WHITE}\n${GREEN}[\D{%H:%M:%S}]${NONE}> ${WHITE}"
+    PS1="${BOLD_GREEN}\u${NONE}@${GREEN}\h${NONE}:"'${PWD}'"${RED}"'$(git_branch)'"${WHITE}\n${GREEN}[\D{%H:%M:%S}]${NONE}> ${WHITE}"
 }
 
 # Set command line prompt.

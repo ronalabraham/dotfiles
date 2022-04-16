@@ -1,6 +1,8 @@
 # set vi to be the default editor for readline
 set editing-mode vi
 set show-mode-in-prompt On
+set vi-cmd-mode-string ":"
+set vi-ins-mode-string "+"
 
 # vi settings
 $if mode=vi
