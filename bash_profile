@@ -17,8 +17,18 @@ function git_branch() {
     fi
 }
 
+function prompt() {
+    local GREEN="\[\033[0;32m\]"
+    local BOLD_GREEN="\[\033[1;32m\]"
+    local RED="\[\033[0;31m\]"
+    local WHITE="\[\033[00;97m\]"
+    local NONE="\[\033[00m\]"
+
+    PS1="${BOLD_GREEN}\u${NONE}@${GREEN}\h${NONE}:${PWD}${RED}$(git_branch)${WHITE}\n${GREEN}[\D{%H:%M:%S}]${NONE}> ${WHITE}"
+}
+
 # Set command line prompt.
-PS1='\[\033[01;32m\]\u\[\033[00m\]@\[\033[00;32m\]\h\[\033[00m\]:${PWD}\[\033[00m\]\[\033[00;31m\]$(git_branch)\n\[\033[00;32m\][\D{%H:%M:%S}] \[\033[00m\]$ \[\033[00;97m\]'
+prompt
 
 # Reset formatting after typing a command (before the output is displayed); see:
 #     https://wiki.archlinux.org/title/Bash/Prompt_customization#Escapes_between_command_input_and_output
