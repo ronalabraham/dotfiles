@@ -16,15 +16,25 @@ let b:ale_fixers = [
 let g:ale_python_flake8_executable = "python3"
 let g:ale_python_flake8_options = "-m flake8"
 
+"mypy options
+let g:ale_python_mypy_executable = "python3"
+let g:ale_python_mypy_options = "-m mypy"
+
+"pydocstyle options
+let g:ale_python_pydocstyle_executable = "python3"
+let g:ale_python_pydocstyle_options = "-m pydocstyle"
+
 "pylint options
 let g:ale_python_pylint_executable = "python3"
 let g:ale_python_pylint_options = "-m pylint"
 
 "isort options
-let g:ale_python_isort_options = "-w=79 -m=3"
+let g:ale_python_isort_executable = "python3"
+let g:ale_python_isort_options = "-m isort -w=79 -m=3"
 
 "black options
-let g:ale_python_black_options = "--line-length 79"
+let g:ale_python_black_executable = "python3"
+let g:ale_python_black_options = "-m black --line-length 79"
 
 " local customization in ~/.vimrc_local
 let $PYTHONLOCALFILE=expand("~/.vim_local/ftplugin/python.vim")
