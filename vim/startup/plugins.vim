@@ -94,6 +94,10 @@ nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
 nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
+"TOML syntax highlighing (not needed for Vim 8.2.3519+)
+if v:version < 803  "https://stackoverflow.com/a/11775069/5569830
+    Plug 'cespare/vim-toml', { 'branch': 'main' }
+endif
 
 call plug#end()
 
