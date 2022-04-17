@@ -45,23 +45,37 @@ nnoremap <A-p> :bprevious<CR>:redraw<CR>:ls<CR>
 
 "Ctrl+z maps to undo
 "Ctrl+y maps to redo
-"Ctrl+c copies to system clipboard in visual mode
-"  vim.fandom.com/wiki/Accessing_the_system_clipboard
-"Ctrl+v pastes from X clipboard in normal mode, but from system clipboard in
-"insert mode
-"  stackoverflow.com/questions/2861627/paste-in-insert-mode
+nnoremap <C-z> u
+inoremap <C-z> <C-\><C-o>u
+nnoremap <C-y> <C-R>
+inoremap <C-y> <C-o><C-R>
+if !IsWSL()
+    "Ctrl+c copies to system clipboard in visual mode
+    "  vim.fandom.com/wiki/Accessing_the_system_clipboard
+    "Ctrl+v pastes from X clipboard in normal mode, but from system clipboard
+    "in insert mode
+    "  stackoverflow.com/questions/2861627/paste-in-insert-mode
+    vnoremap <C-c> "+y
+    nnoremap <C-v> "*p
+    inoremap <C-v> <C-r><C-o>+
+else
+    "Ctrl+c copies to Windows system clipboard
+    "  - in selection mode, obviously the selection is copied
+    "  - in normal mode, the current line is copied
+    "Ctrl+v pastes from Windows system clipboard
+    "
+    "  https://vim.fandom.com/wiki/Using_the_Windows_clipboard_in_Cygwin_Vim
+    vnoremap <C-c> :call PutClip(visualmode(), 1)<CR>
+    nnoremap <C-c> :call PutClip('n', 1)<CR>
+    nnoremap <C-v> :call GetClip()<CR>
+    inoremap <C-v> <Esc>:call GetClip()<CR>a
+endif
+
 "Ctrl+x closes the current buffer
 "  stackoverflow.com/questions/4465095/vim-delete-buffer-without-losing-the-split-window
 "Ctrl+s saves the current buffer
 "Ctrl+p does what ctrl+v normally does: enter the next non-digit literally
 "  (see :h i CTRL-V)
-nnoremap <C-z> u
-inoremap <C-z> <C-\><C-o>u
-nnoremap <C-y> <C-R>
-inoremap <C-y> <C-o><C-R>
-vnoremap <C-c> "+y
-nnoremap <C-v> "*p
-inoremap <C-v> <C-r><C-o>+
 nnoremap <C-x> :bp\|bd #<CR>
 noremap <C-s> :w<CR>
 inoremap <C-S> <Esc>:w<CR>

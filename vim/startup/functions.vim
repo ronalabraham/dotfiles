@@ -101,6 +101,18 @@ function! GetPlatform()
     endif
 endfunction
 
+"check if running in WSL (Windows subsystem for Linux)
+function! IsWSL()
+    if has("unix")
+        let lines = readfile("/proc/version")
+        if lines[0] =~ "Microsoft"
+            return 1
+        endif
+    endif
+    return 0
+endfunction
+
+
 "build YouCompleteMe compiled component
 "    https://github.com/junegunn/vim-plug#post-update-hooks
 function! BuildYCM(info)
@@ -113,4 +125,38 @@ function! BuildYCM(info)
                              "--clang-completer (disabling clang-completer for
                              "now; it's too noisy for C++ until I can fix it)
     endif
+endfunction
+
+"Put selection into Windows clipboard using clip.exe; adapted from
+"    https://vim.fandom.com/wiki/Using_the_Windows_clipboard_in_Cygwin_Vim
+function! PutClip(type, ...) range
+    let sel_save = &selection
+    let &selection = "inclusive"
+    let reg_save = @@
+    if a:type == 'n'
+        silent exe a:firstline . "," . a:lastline . "y"
+    elseif a:type == 'c'
+        silent exe a:1 . "," . a:2 . "y"
+    else
+        silent exe "normal! `<" . a:type . "`>y"
+    endif
+
+    call system('clip.exe', @@) " if you're using Bash on Windows
+
+    let &selection = sel_save
+    let @@ = reg_save
+endfunction
+
+"Get content from  Windows clipboard using powershell.exe; adapted from:
+"    https://vim.fandom.com/wiki/Using_the_Windows_clipboard_in_Cygwin_Vim
+"    https://github.com/microsoft/WSL/issues/1069
+function! GetClip()
+    let reg_save = @@
+    "Remove Windows line-endings; inspired by:
+    "    https://stackoverflow.com/a/56584029 
+    let @@ = system('powershell.exe Get-Clipboard | perl -p -e "s/\r\n$/\n/"')
+    setlocal paste
+    exe 'normal p'
+    setlocal nopaste
+    let @@ = reg_save
 endfunction
