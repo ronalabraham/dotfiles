@@ -97,9 +97,6 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ 'do': 'bash install.sh',
     \ }
 
-let g:LanguageClient_serverCommands = {
-    \ 'java': ['~/.vim/startup/jdtls.sh', '-data', getcwd()],
-    \ }
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
 nnoremap <silent> K :call LanguageClient#textDocument_hover()<CR>
 nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>

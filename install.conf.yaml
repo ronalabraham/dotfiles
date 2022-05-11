@@ -13,7 +13,6 @@
     ~/.bash_tmux: bash_tmux
     ~/.ctags: ctags
     ~/.dircolors: dircolors
-    ~/.eclipse.jdt.ls: eclipse.jdt.ls
     ~/.fzf: fzf
     ~/.fzf.bash_completion: fzf.bash_completion
     ~/.gitconfig: gitconfig
@@ -50,18 +49,6 @@
       stderr: true
     - command: vim +PlugClean +PlugUpgrade! +PlugUpdate! +qall
       description: Installing and/or updating vim plugins with vim-plug
-      stdin: true
-      stdout: true
-      stderr: true
-    - command: echo todo
-      description: "TODO: this is a place holder for getting \
-          google-java-format to work on Linux. Right now, I'm only using it \
-          on a Mac."
-      stdin: true
-      stdout: true
-      stderr: true
-    - command: cd ~/.eclipse.jdt.ls; ./mvnw clean verify
-      description: Build eclipse.jdt.ls, a Java LangServer
       stdin: true
       stdout: true
       stderr: true

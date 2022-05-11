@@ -10,10 +10,6 @@
 	path = fzf
 	url = https://github.com/junegunn/fzf.git
 	branch = master
-[submodule "eclipse.jdt.ls"]
-	path = eclipse.jdt.ls
-	url = https://github.com/eclipse/eclipse.jdt.ls
-	branch = master
 [submodule "vim-plug"]
 	path = vim-plug
 	url = https://github.com/junegunn/vim-plug
