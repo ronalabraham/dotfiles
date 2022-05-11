@@ -10,6 +10,17 @@ Plug 'vim-airline/vim-airline-themes'
 let g:airline#extensions#tabline#enabled = 1        "enable buffer list
 let g:airline#extensions#tabline#fnamemod = ':t'    "show just the filename
 
+"Enable powerline fonts in airline, per:
+"  https://github.com/vim-airline/vim-airline#integrating-with-powerline-fonts
+"
+"You may want to disable this if your terminal emulator does not have not
+"Powerline fonts installed. iTerm2 has built-in support for this:
+"  iTerm2 > Preferences > Profiles > Text > "Use built-in Powerline glyphs"
+let g:airline_powerline_fonts = 1
+
+"vim-fugitive for git support in vim
+Plug 'tpope/vim-fugitive'
+
 "vim-fontdetect helps detect which fonts are available in vim
 Plug 'drmikehenry/vim-fontdetect'
 
