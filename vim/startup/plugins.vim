@@ -9,6 +9,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 let g:airline#extensions#tabline#enabled = 1        "enable buffer list
 let g:airline#extensions#tabline#fnamemod = ':t'    "show just the filename
+let g:airline_theme='gruvbox'
 
 "Enable powerline fonts in airline, per:
 "  https://github.com/vim-airline/vim-airline#integrating-with-powerline-fonts
@@ -33,6 +34,9 @@ Plug 'sainnhe/vim-color-forest-night'
 Plug 'cseelus/vim-colors-lucid'
 Plug 'nanotech/jellybeans.vim'
 Plug 'nightsense/snow'
+Plug 'joshdick/onedark.vim'
+Plug 'sainnhe/sonokai'
+Plug 'morhetz/gruvbox'
 
 "vim-easymotion to move around quickly
 Plug 'easymotion/vim-easymotion'

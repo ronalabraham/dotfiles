@@ -1,13 +1,20 @@
 "vim colors
 
-"set up for solarized colorscheme
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
 syntax enable
 set background=dark
 
 if has('gui_running')
     silent! colorscheme desert
 else
-    silent! colorscheme solarized
+    " Delete pipe characters for vertical split borders; note that the trailing
+    " space is intentional!
+    set fillchars+=vert:\ 
+
+    " Other cosmetic settings
+    let g:gruvbox_vert_split='bg2'
+    let g:gruvbox_number_column='bg1'
+    let g:gruvbox_invert_selection='0'
+    let g:gruvbox_hls_cursor='purple'
+
+    silent! colorscheme gruvbox
 endif
