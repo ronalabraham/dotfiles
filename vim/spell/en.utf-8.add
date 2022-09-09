@@ -33,3 +33,6 @@ coroutine
 covariant
 asynchronicity
 parallelization
+liveness
+BPaaS
+Kubernetes
