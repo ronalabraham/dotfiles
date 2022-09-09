@@ -49,4 +49,5 @@ python3 -m pip install \
     isort \
     mypy \
     pydocstyle \
-    pylint
+    pylint \
+    wemake-python-styleguide
