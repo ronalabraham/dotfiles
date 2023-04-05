@@ -111,6 +111,9 @@ if v:version < 803  "https://stackoverflow.com/a/11775069/5569830
     Plug 'cespare/vim-toml', { 'branch': 'main' }
 endif
 
+"vim-go for Go (golang) development
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
 call plug#end()
 
 "plugins I want to try
