@@ -33,3 +33,8 @@ prompt
 # Reset formatting after typing a command (before the output is displayed); see:
 #     https://wiki.archlinux.org/title/Bash/Prompt_customization#Escapes_between_command_input_and_output
 trap 'tput sgr0' DEBUG
+
+# Set default editor to `vim`; from:
+#   https://unix.stackexchange.com/a/73486
+export VISUAL=vim
+export EDITOR="$VISUAL"
