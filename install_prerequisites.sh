@@ -31,11 +31,8 @@ case $os in
             cmake \
             exuberant-ctags \
             git-all \
-            kompare \
-            python-dev \
             python3-dev \
             python3-pip \
-            scala \
             tmux \
             tree \
             vim
