@@ -70,7 +70,11 @@ endfunc
 
 function! ColorColumnToggle()
     if(&colorcolumn == 0)
-        let &colorcolumn=join(range(80,999),",")
+        let l:ccwidth = 80
+        if (&ft=='go')
+            let l:ccwidth = 120
+        endif
+        let &colorcolumn=join(range(l:ccwidth,999),",")
     else
         let &colorcolumn=0
     endif
