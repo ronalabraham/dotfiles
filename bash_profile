@@ -9,9 +9,10 @@
 [[ -r ~/.git-prompt.sh ]] && . ~/.git-prompt.sh
 
 function git_branch() {
-    local branch=$(__git_ps1 "%s")
-    if [ -z $branch ]; then
-        echo ""
+    local branch
+    branch=$(__git_ps1 "%s")
+    if [[ -z "$branch" ]]; then
+        echo "$branch"
     else
         echo "(└─$branch)"
     fi
@@ -24,7 +25,11 @@ function prompt() {
     local WHITE="\[\033[00;97m\]"
     local NONE="\[\033[00m\]"
 
-    PS1="${BOLD_GREEN}\u${NONE}@${GREEN}\h${NONE}:"'${PWD}'"${RED}"'$(git_branch)'"${WHITE}\n${GREEN}[\D{%H:%M:%S}]${NONE}> ${WHITE}"
+    PS1="${BOLD_GREEN}\u${NONE}"
+    PS1+="@${GREEN}\h${NONE}:"
+    PS1+='$(pwd)'
+    PS1+="${RED}"'$(git_branch)'"${NONE}\n"
+    PS1+="${GREEN}[\D{%H:%M:%S}]${NONE}> ${WHITE}"
 }
 
 # Set command line prompt.
