@@ -72,7 +72,7 @@ function! ColorColumnToggle()
     if(&colorcolumn == 0)
         let l:ccwidth = 80
         if (&ft=='go')
-            let l:ccwidth = 120
+            let l:ccwidth = 121
         endif
         let &colorcolumn=join(range(l:ccwidth,999),",")
     else
