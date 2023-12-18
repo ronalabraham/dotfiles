@@ -73,6 +73,8 @@ function! ColorColumnToggle()
         let l:ccwidth = 80
         if (&ft=='go')
             let l:ccwidth = 121
+        elseif (&ft=='gitcommit')
+            let l:ccwidth = 72
         endif
         let &colorcolumn=join(range(l:ccwidth,999),",")
     else
