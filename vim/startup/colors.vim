@@ -11,7 +11,7 @@ else
     set fillchars+=vert:\ 
 
     " Other cosmetic settings
-    let g:gruvbox_vert_split='bg2'
+    let g:gruvbox_vert_split='bg3'
     let g:gruvbox_number_column='bg1'
     let g:gruvbox_invert_selection='0'
     let g:gruvbox_hls_cursor='purple'
