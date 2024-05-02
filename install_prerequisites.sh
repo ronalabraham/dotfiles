@@ -27,6 +27,7 @@ case $os in
             ;;
     "Linux" )
         packages=(
+            "bat" # enhanced cat
             "bc"  # used by `tmux/conf/source_by_version.sh`
             "build-essential"
             "cmake"

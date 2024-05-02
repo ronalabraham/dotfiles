@@ -11,6 +11,9 @@
     ~/.bash_completion: bash_completion
     ~/.bash_profile: bash_profile
     ~/.bash_tmux: bash_tmux
+    ~/.bin_local/bat:
+      create: true
+      path: bin_local/bat
     ~/.ctags: ctags
     ~/.dircolors: dircolors
     ~/.fzf: fzf
