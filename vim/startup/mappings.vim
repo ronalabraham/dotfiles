@@ -113,11 +113,12 @@ vnoremap <Tab> >><Esc>gv
 vnoremap <S-Tab> <<<Esc>gv
 nnoremap <silent> <CR> :call InsertOrAppendMode()<CR><CR><Esc>
 
-"Setup for vim-easymotion
-"------------------------
-"Note that <leader><leader> is the default easymotion prefix
+"Change the leader key from \ to ,
+"This is much easier to reach!
 let mapleader = ","
 
+"Setup for vim-easymotion
+"------------------------
 ",w triggers bidirectional (beginning of) word jumping
 map <leader>w <Plug>(easymotion-bd-w)
 
