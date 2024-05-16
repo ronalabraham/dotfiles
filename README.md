@@ -23,3 +23,12 @@ You can make customizations for the following programs by editing their (untrack
 |             | ~/.vim_local/ftplugin/python.vim |
 | git         | ~/.gitconfig_local               |
 | tmux        | ~/.tmux.conf_local               |
+
+## Updating Submodules
+This repository uses a few git submodules. To update the submodule pointer to a different commit:
+1. `cd` to submodule directory.
+1. `git checkout` the commit you want to point to.
+1. `cd` back to repository root.
+    1. `git diff` will now show the old and new commit pointers
+1. `git commit` the change in the repository root.
+1. `git push` the change up to `origin/main`.
