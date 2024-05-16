@@ -88,6 +88,7 @@ let g:ale_lint_on_save = 1                 "run when saving a file
 let g:ale_sign_column_always = 1           "always show the gutter
 let g:ale_sign_error = '!>'                "looks better
 let g:ale_sign_warning = '->'              "looks better
+let g:ale_virtualtext_cursor = 'disabled'  "disable virtual text
 
 "vim-tmux-navigator to navigate between tmux and vim splits cleanly
 Plug 'christoomey/vim-tmux-navigator'
