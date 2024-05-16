@@ -19,6 +19,9 @@ let g:airline_theme='gruvbox'
 "  iTerm2 > Preferences > Profiles > Text > "Use built-in Powerline glyphs"
 let g:airline_powerline_fonts = 1
 
+"vim-oscyank allows copying text through SSH with OSC52
+Plug 'ojroques/vim-oscyank', {'branch': 'main'}
+
 "vim-fugitive for git support in vim
 Plug 'tpope/vim-fugitive'
 

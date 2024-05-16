@@ -107,7 +107,7 @@ function! GetPlatform()
     endif
 endfunction
 
-"check if running in WSL (Windows subsystem for Linux)
+"check if vim is running in WSL (Windows subsystem for Linux)
 function! IsWSL()
     if has("unix") && filereadable("/proc/version")
         let lines = readfile("/proc/version")
@@ -118,6 +118,13 @@ function! IsWSL()
     return 0
 endfunction
 
+"check if vim is running in SSH session
+function! IsSSH()
+    if !empty($SSH_CLIENT) || !empty($SSH_TTY)
+        return 1
+    endif
+    return 0
+endfunction
 
 "build YouCompleteMe compiled component
 "    https://github.com/junegunn/vim-plug#post-update-hooks

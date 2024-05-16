@@ -49,16 +49,12 @@ nnoremap <C-z> u
 inoremap <C-z> <C-\><C-o>u
 nnoremap <C-y> <C-R>
 inoremap <C-y> <C-o><C-R>
-if !IsWSL()
-    "Ctrl+c copies to system clipboard in visual mode
-    "  vim.fandom.com/wiki/Accessing_the_system_clipboard
-    "Ctrl+v pastes from X clipboard in normal mode, but from system clipboard
-    "in insert mode
-    "  stackoverflow.com/questions/2861627/paste-in-insert-mode
-    vnoremap <C-c> "+y
-    nnoremap <C-v> "*p
-    inoremap <C-v> <C-r><C-o>+
-else
+if IsSSH()
+    "Ctrl+c copies from remote vim to system clipboard in visual mode
+    "  https://github.com/ojroques/vim-oscyank?tab=readme-ov-file#usage
+    vnoremap <C-c> <Plug>OSCYankVisual
+    "TODO: paste from system clipboard
+elseif IsWSL()
     "Ctrl+c copies to Windows system clipboard
     "  - in selection mode, obviously the selection is copied
     "  - in normal mode, the current line is copied
@@ -69,6 +65,15 @@ else
     nnoremap <C-c> :call PutClip('n', 1)<CR>
     nnoremap <C-v> :call GetClip()<CR>
     inoremap <C-v> <Esc>:call GetClip()<CR>a
+else
+    "Ctrl+c copies to system clipboard in visual mode
+    "  vim.fandom.com/wiki/Accessing_the_system_clipboard
+    "Ctrl+v pastes from X clipboard in normal mode, but from system clipboard
+    "in insert mode
+    "  stackoverflow.com/questions/2861627/paste-in-insert-mode
+    vnoremap <C-c> "+y
+    nnoremap <C-v> "*p
+    inoremap <C-v> <C-r><C-o>+
 endif
 
 "Ctrl+x closes the current buffer
