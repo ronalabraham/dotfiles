@@ -27,21 +27,41 @@ case $os in
             ;;
     "Linux" )
         packages=(
-            "bat" # enhanced cat
             "bc"  # used by `tmux/conf/source_by_version.sh`
-            "build-essential"
             "cmake"
-            "exuberant-ctags"
             "git-all"
-            "python3-dev"
-            "python3-pip"
-            "shellcheck"
             "tmux"
             "tree"
             "vim"
             "xdg-utils"  # `tmux-open` plugin appears to use `xdg-open`
         )
-        sudo apt-get install "${packages[@]}"
+        if command -v yum &> /dev/null; then
+            install_cmd=("yum" "install" "-y")
+            packages+=(
+                "cmake"
+                "git-all"
+                "python3.12"
+                "python3.12-pip"
+                "ShellCheck"
+            )
+        else
+            install_cmd=("apt-get" "install")
+            packages+=(
+                "bat" # enhanced cat
+                "build-essential"
+                "python3-dev"
+                "python3-pip"
+                "shellcheck"
+            )
+        fi
+        install_cmd+=( "${packages[@]}" )
+
+        # check if sudo is needed
+        if [ "$(id -u)" == "0" ]; then
+            "${install_cmd[@]}"
+        else
+            sudo "${install_cmd[@]}"
+        fi
             ;;
 esac
 python3 -m pip install \
