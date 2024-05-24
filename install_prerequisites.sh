@@ -40,8 +40,6 @@ case $os in
             packages+=(
                 "cmake"
                 "git-all"
-                "python3.12"
-                "python3.12-pip"
                 "ShellCheck"
             )
         else
