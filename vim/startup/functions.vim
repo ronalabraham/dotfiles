@@ -134,7 +134,9 @@ function! BuildYCM(info)
     " - status: 'installed', 'updated', or 'unchanged'
     " - force:  set on PlugInstall! or PlugUpdate!
     if a:info.status == 'installed' || a:info.status == 'updated' || a:info.force
-        silent !./install.py
+        " --force-sudo is apparently dangerous. I am adding it to allow the
+        "  installation to proceed in Docker containers as root.
+        silent !./install.py --force-sudo --verbose
                              "--clang-completer (disabling clang-completer for
                              "now; it's too noisy for C++ until I can fix it)
     endif
