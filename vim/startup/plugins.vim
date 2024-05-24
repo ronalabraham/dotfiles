@@ -26,19 +26,12 @@ Plug 'ojroques/vim-oscyank', {'branch': 'main'}
 Plug 'tpope/vim-fugitive'
 
 "vim-fontdetect helps detect which fonts are available in vim
-Plug 'drmikehenry/vim-fontdetect'
+Plug 'drmikehenry/vim-fontdetect', {'branch': 'main'}
 
 "vim-scala for scala syntax highlighting and more
 Plug 'derekwyatt/vim-scala'
 
 "plugins for colorschemes
-Plug 'altercation/vim-colors-solarized'
-Plug 'sainnhe/vim-color-forest-night'
-Plug 'cseelus/vim-colors-lucid'
-Plug 'nanotech/jellybeans.vim'
-Plug 'nightsense/snow'
-Plug 'joshdick/onedark.vim'
-Plug 'sainnhe/sonokai'
 Plug 'morhetz/gruvbox'
 
 "vim-easymotion to move around quickly
