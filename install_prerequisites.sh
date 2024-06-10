@@ -43,7 +43,7 @@ case $os in
                 "ShellCheck"
             )
         else
-            install_cmd=("apt-get" "install")
+            install_cmd=("apt-get" "install" "-y")
             packages+=(
                 "bat" # enhanced cat
                 "build-essential"
