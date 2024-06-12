@@ -27,7 +27,7 @@ case $os in
             ;;
     "Linux" )
         packages=(
-            "bc"  # used by `tmux/conf/source_by_version.sh`
+            "bc"  # used by tmux configuration
             "cmake"
             "git-all"
             "tmux"
