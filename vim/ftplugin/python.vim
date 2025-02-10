@@ -1,11 +1,11 @@
-"Check CMake files with the following linters
+"Check Python files with the following linters
 let b:ale_linters = [
             \"flake8",
             \"mypy",
             \"pydocstyle",
             \"pylint"]
 
-"Fix CMake files with the following fixers
+"Fix Python files with the following fixers
 let b:ale_fixers = [
             \"remove_trailing_lines",
             \"trim_whitespace",
@@ -29,8 +29,8 @@ let g:ale_python_pylint_executable = "python3"
 let g:ale_python_pylint_options = "-m pylint"
 
 "isort options
-let g:ale_python_isort_executable = "python3"
-let g:ale_python_isort_options = "-m isort -w=79 -m=3"
+let g:ale_python_isort_executable = "isort"
+let g:ale_python_isort_options = "--line-length=79 --multi-line=VERTICAL_HANGING_INDENT"
 
 "black options
 let g:ale_python_black_executable = "python3"
